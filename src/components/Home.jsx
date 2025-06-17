@@ -88,10 +88,10 @@ const Home = () => {
 
         <div className="hero-text">
           <h1>
-            USER <span className="highlight">FOCUSED</span><br />
-            DESIGNS BUILT ON<br />
+            User <span className="highlight">FOCUSED</span><br />
+            Designs built on<br />
             <span className="highlight">EMPATHY</span> DEDICATION<br />
-            AND <span className="highlight">TEAMWORK</span>
+            And <span className="highlight">TEAMWORK</span>
           </h1>
         </div>
       </section>
