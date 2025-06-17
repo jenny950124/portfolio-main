@@ -1,0 +1,40 @@
+{
+  "name": "ex81",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://jennyuiux.com",
+
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "deploy": "npm run build && cp dist/index.html dist/404.html && echo 'jennyuiux.com' > dist/CNAME && git push origin `git subtree split --prefix dist main`:gh-pages --force"
+  },
+  "dependencies": {
+    "@babel/helper-plugin-utils": "^7.26.5",
+    "@react-three/drei": "^9.56.12",
+    "@react-three/fiber": "^8.13.6",
+    "framer-motion": "^12.6.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1",
+    "three": "^0.152.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.1.0",
+    "eslint": "^9.19.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "globals": "^15.1.0",
+    "react-router-dom": "^7.4.1",
+    "vite": "^6.1.0"
+  }
+}

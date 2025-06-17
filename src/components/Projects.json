@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "title": "Portfolio Website",
+      "description": "React-based portfolio with animated cloud intro and scroll interaction.",
+      "image": "/images/work1.jpg",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "title": "UX Case Study",
+      "description": "Redesigning a secondhand app with location-based features.",
+      "image": "/images/work2.jpg",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "title": "Microplastic Awareness App",
+      "description": "App concept that visualizes microplastic usage and suggests alternatives.",
+      "image": "/images/work3.jpg",
+      "link": "#"
+    }
+  ]
+  

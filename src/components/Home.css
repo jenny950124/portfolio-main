@@ -1,0 +1,347 @@
+.home {
+  background: #fbd3e9;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.hero-text {
+  text-align: center;
+  color: white;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-text h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.4;
+  text-transform: uppercase;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.highlight {
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 107%;   /* 기존보다 살짝 더 넓게 */
+  height: 110%;  /* 너무 두껍지 않게 */
+  transform: translate(-50%, -50%);
+  border: 4px solid white;
+  border-radius: 100px;
+  animation: draw 1s ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes draw {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+
+.cloud {
+  position: absolute;
+  width: 420px;
+  opacity: 0.85;
+  transition: transform 0.4s ease, scale 0.4s ease;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.cloud-left {
+  top: -10%;
+  left: -300px;
+}
+
+.cloud-right {
+  top: 10%;
+  right: 200px;
+}
+
+.cloud:hover {
+  transform: scale(1.1);
+}
+
+
+.cloud.flash-left {
+  animation: flash-left 0.6s ease-in-out;
+}
+.cloud.flash-right {
+  animation: flash-right 0.6s ease-in-out;
+}
+
+@keyframes flash-left {
+  0% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(-20px, 10px) scale(1.1) rotate(-8deg); }
+  40% { transform: translate(10px, -10px) scale(1.05) rotate(4deg); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes flash-right {
+  0% { transform: translate(0, 0) scale(1); }
+  20% { transform: translate(20px, 10px) scale(1.1) rotate(8deg); }
+  40% { transform: translate(-10px, -10px) scale(1.05) rotate(-4deg); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+
+.floating-text-section {
+  background: #fcffc5;
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+  gap: 0.4rem;
+}
+
+.floating-letter {
+  display: inline-block;
+  transition: transform 0.20s ease;
+  cursor: default;
+  will-change: transform;
+}
+
+.floating-sub {
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: #555;
+}
+
+.floating-hint {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #a44aff;
+  animation: fadeBlink 2s infinite;
+}
+
+@keyframes fadeBlink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+
+.intro-section {
+  background: #ffffff;
+  color: #111;
+  text-align: left;
+  padding: 8rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-content {
+  max-width: 900px;
+  width: 100%;
+  padding: 2rem;
+}
+
+.intro-step {
+  display: inline-block;
+  background: #ff4b5c;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 100px;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.intro-content h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+.intro-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 2.5rem;
+}
+
+.intro-button {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 2px solid #111;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #111;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+}
+
+.intro-button:hover {
+  background: #111;
+  color: white;
+}
+
+.projects-wrapper {
+  padding: 6rem 1rem;
+  background: linear-gradient(to bottom, #ff3c3c, #ff0000);
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #ffffff;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+
+.project-showcase {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9;
+  border-radius: 30px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.4s ease, transform 0.4s ease;
+  display: block;
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(16px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  color: white;
+}
+
+.project-content {
+  text-align: left;
+  max-width: 600px;
+}
+
+.project-showcase:hover .project-bg {
+  filter: blur(6px) brightness(0.6);
+  transform: scale(1.03);
+}
+
+.project-showcase:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-content a {
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.project-content a:hover {
+  background: #eee;
+}
+
+.emoji-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.emoji {
+  position: absolute;
+  font-size: 1.8rem;
+  opacity: 0.7;
+  animation: floatEmoji 8s infinite ease-in-out;
+}
+
+.emoji:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.emoji:nth-child(2) { top: 25%; left: 70%; animation-delay: 1.2s; }
+.emoji:nth-child(3) { top: 60%; left: 35%; animation-delay: 2.4s; }
+.emoji:nth-child(4) { top: 75%; left: 80%; animation-delay: 3.6s; }
+.emoji:nth-child(5) { top: 50%; left: 10%; animation-delay: 4.8s; }
+
+@keyframes floatEmoji {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(10deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.floating-hint {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #c44aff;
+  z-index: 2;
+  position: relative;
+}
+
+.poster-section {
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 2rem;
+}
+
+.poster-image {
+  max-width: 100%;
+  width: 2000px;
+  border-radius: 4px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
