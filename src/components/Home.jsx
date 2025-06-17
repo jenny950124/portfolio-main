@@ -7,7 +7,7 @@ import cloud2 from '../assets/cloud2.jpg';
 import posterMockup from '../assets/posterMockup.jpg';
 
 const FloatingText = () => {
-  const letters = "Designs that speak louder than words.".split('');
+  const letters = "Designs That Speak Louder Than Words.".split('');
 
   const handleMouseMove = (e, index) => {
     const letter = e.target;

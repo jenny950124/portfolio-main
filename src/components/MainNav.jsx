@@ -31,15 +31,6 @@ const MainNav = () => {
 
       <ul className={`nav-list ${menuOpen ? 'active' : ''}`}>
         <li
-          onMouseEnter={() => setActiveItem('home')}
-          onMouseLeave={() => setActiveItem('')}
-          onClick={closeMenu}
-        >
-          <Link to="/">
-            {activeItem === 'home' && <span className="cloud-emoji">☁️</span>} Home
-          </Link>
-        </li>
-        <li
           onMouseEnter={() => setActiveItem('about')}
           onMouseLeave={() => setActiveItem('')}
           onClick={closeMenu}
