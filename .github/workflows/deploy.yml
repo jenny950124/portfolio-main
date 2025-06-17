@@ -1,32 +1,33 @@
-name: Deploy to GitHub Pages
+name: 🚀 Deploy to Namecheap via FTP
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
-  deploy:
+  web-deploy:
+    name: 🚀 Deploy React
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Get latest code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Use Node.js 20
+        uses: actions/setup-node@v2
         with:
-          node-version: 18
+          node-version: '20'
 
-      - name: Install dependencies
-        run: npm install
+      - name: 🛠 Build Project
+        run: |
+          npm install
+          npm run build
 
-      - name: Build site
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: 📤 Upload via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          cname: jennyuiux.com
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: "dist/"
+          server-dir: "public_html/"
