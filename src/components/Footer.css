@@ -1,115 +1,106 @@
 footer {
-  padding: 40px 20px;
-  text-align: center;
+  background-color: #ff4b5c;
   color: white;
-  background: #ff4b5c;
+  padding: 40px 20px;
   width: 100%;
+  font-family: inherit;
 }
 
-.footer-content {
+.footer-grid {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  flex-wrap: wrap;
   gap: 30px;
 }
 
-.footer-logo {
-  flex: 1 1 100px;
+.footer-column {
+  flex: 1 1 250px;
 }
 
-.footer-logo img {
-  width: 80px;
-  height: auto;
-}
-
-.footer-links {
+.footer-nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  flex: 1 1 200px;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.footer-links a,
-.footer-links Link {
+.footer-nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
-  white-space: nowrap;
 }
 
-.footer-links a:hover {
+.footer-nav a:hover {
   color: #ff9d9d;
 }
 
-.footer-email-social {
-  flex: 1 1 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-}
-
 .footer-email {
+  text-align: center;
   font-size: 14px;
-  margin-bottom: 10px;
-  word-break: break-word;
+  font-weight: bold;
 }
 
 .footer-email a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
 }
 
 .footer-email a:hover {
   color: #ff9d9d;
 }
 
-.footer-social-icons {
+.footer-social {
   display: flex;
-  gap: 15px;
   justify-content: flex-end;
-  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.footer-social-icons a {
+.footer-social a {
   color: white;
   font-size: 20px;
 }
 
-.footer-social-icons a:hover {
+.footer-social a:hover {
   color: #ff9d9d;
 }
 
 .footer-bottom {
   margin-top: 30px;
   font-size: 14px;
+  text-align: center;
 }
 
-/* 🔽 진짜 반응형 처리 */
+/* ✅ 반응형 스타일 */
 @media (max-width: 768px) {
-  .footer-content {
+  .footer-grid {
     flex-direction: column;
-    align-items: center;
     text-align: center;
+    gap: 0px; /* 필요 없는 gap 제거 */
+    padding: 20px 0;
   }
 
-  .footer-email-social {
-    align-items: center;
-    text-align: center;
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
   }
 
-  .footer-links {
-    justify-content: center;
+  .footer-email {
+    margin: 10px 0 0; /* 위쪽만 약간 */
+    padding: 0;
   }
 
-  .footer-social-icons {
-    justify-content: center;
+  .footer-social {
+    margin: 10px 0 0;
+    padding: 0;
+  }
+
+  .footer-bottom {
+    margin-top: 20px;
   }
 }
