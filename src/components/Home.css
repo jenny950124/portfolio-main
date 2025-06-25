@@ -27,21 +27,16 @@
 
 .highlight {
   position: relative;
+  display: inline-block;
+  padding: 0.1em 0.4em; /* ✅ 여백을 내부에 줘서 답답함 해소 */
+  border: 5px solid white;
+  border-radius: 100px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
 }
 
-.highlight::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 107%;   /* 기존보다 살짝 더 넓게 */
-  height: 110%;  /* 너무 두껍지 않게 */
-  transform: translate(-50%, -50%);
-  border: 4px solid white;
-  border-radius: 100px;
-  animation: draw 1s ease-in-out;
-  pointer-events: none;
-}
+
 
 @keyframes draw {
   0% {

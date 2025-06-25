@@ -1,64 +1,10 @@
 import React, { useRef } from 'react';
 import './Home.css';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import cloud1 from '../assets/cloud1.jpg';
 import cloud2 from '../assets/cloud2.jpg';
 import posterMockup from '../assets/posterMockup.jpg';
-
-const FloatingText = () => {
-  const letters = "Designs That Speak Louder Than Words.".split('');
-
-  const handleMouseMove = (e, index) => {
-    const letter = e.target;
-    const rect = letter.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-
-    const distance = Math.sqrt(x * x + y * y);
-    const maxDist = 160;
-    const strength = Math.max(0, maxDist - distance) / maxDist;
-
-    const moveX = x * strength * 1.5;
-    const moveY = y * strength * 1.5;
-
-    letter.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${strength * 20}deg)`;
-  };
-
-  const handleMouseLeave = (e) => {
-    e.target.style.transform = 'translate(0, 0)';
-  };
-
-  return (
-    <div className="floating-text-section">
-      <div className="emoji-container">
-        <span className="emoji">💻</span>
-        <span className="emoji">🎨</span>
-        <span className="emoji">📱</span>
-        <span className="emoji">🩷</span>
-        <span className="emoji">☕️</span>
-        <span className="emoji">🖌️</span>
-      </div>
-
-      <p className="floating-hint">👀 Try hovering over the letters...!</p>
-
-      <div className="floating-text">
-        {letters.map((char, index) => (
-          <span
-            key={index}
-            onMouseMove={(e) => handleMouseMove(e, index)}
-            onMouseLeave={handleMouseLeave}
-            className="floating-letter"
-          >
-            {char === ' ' ? '\u00A0' : char}
-          </span>
-        ))}
-      </div>
-
-      <p className="floating-sub">— by UI/UX Designer Jenny Kim</p>
-    </div>
-  );
-};
+import ProjectSlider from './ProjectSlider';
 
 const Home = () => {
   const cloudLeftRef = useRef(null);
@@ -96,10 +42,8 @@ const Home = () => {
         </div>
       </section>
 
-  
-      <FloatingText />
+      <ProjectSlider />
 
-   
       <section className="intro-section">
         <div className="intro-content">
           <span className="intro-step">Work</span>
@@ -113,7 +57,6 @@ const Home = () => {
         </div>
       </section>
 
-   
       <section className="poster-section">
         <img
           src={posterMockup}

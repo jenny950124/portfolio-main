@@ -1,6 +1,8 @@
+// src/pages/Projects.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import ProjectCard from '../components/ProjectCard';
 import './Projects.css';
+
 import fmpImage from '../assets/work1.jpg';
 import lwdImage from '../assets/work2.jpg';
 import homerImage from '../assets/work3.jpg';
@@ -36,19 +38,10 @@ const projects = [
 const Projects = () => {
   return (
     <section className="projects-wrapper">
-      <h2 className="section-title">Selected Projects</h2>
+      {/* <h2 className="section-title">Selected Projects</h2> */}
       <div className="project-list">
         {projects.map((project) => (
-          <div key={project.id} className="project-showcase">
-            <img src={project.image} alt={project.title} className="project-bg" />
-            <div className="project-overlay">
-              <div className="project-content">
-                <h2>{project.title}</h2>
-                <p>{project.description}</p>
-                <Link to={`/projects/${project.id}`}>View Project ↗</Link>
-              </div>
-            </div>
-          </div>
+          <ProjectCard key={project.id} {...project} />
         ))}
       </div>
     </section>

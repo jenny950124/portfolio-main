@@ -1,0 +1,91 @@
+.slider-wrapper {
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+.slider-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.slider-heading {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+.swiper {
+  padding-bottom: 40px;
+}
+
+.slider-card {
+  width: 100%;
+  max-width: 430px;
+  height: 600px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+}
+
+.slider-card:hover {
+  transform: scale(1.03);
+}
+
+.slider-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.slider-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* 아래 반절만 오버레이 */
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(30%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.slider-card:hover .slider-overlay {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (max-width: 1024px) {
+  .swiper {
+    padding: 0 10px;
+  }
+
+  .slider-overlay {
+    font-size: 0.85rem;
+  }
+
+  .slider-card {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .slider-card {
+    max-width: 540px;
+    height: 700px;
+  }
+}

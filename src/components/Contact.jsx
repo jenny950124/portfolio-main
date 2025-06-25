@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Contact.css';
 import { FaUser, FaEnvelope, FaCommentDots } from 'react-icons/fa';
 import { MeiModel } from '../components/MeiModel';
@@ -6,11 +6,18 @@ import { MeiModel } from '../components/MeiModel';
 const Contact = () => {
   const [triggerRun, setTriggerRun] = useState(false);
   const [isUserTyping, setIsUserTyping] = useState(false);
+  const formRef = useRef(null); // ✅ form DOM 참조
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setTriggerRun(true);
-    e.target.submit(); 
+
+    setTimeout(() => {
+      if (formRef.current) {
+        formRef.current.submit(); // ✅ 폼 전송
+      }
+      setTriggerRun(false); // ✅ 상태 초기화
+    }, 2500); // 애니메이션 보여줄 시간
   };
 
   return (
@@ -21,6 +28,7 @@ const Contact = () => {
         <div className="contact-card">
           <h2>Let's Work Together!</h2>
           <form
+            ref={formRef} // ✅ form에 ref 연결
             className="contact-form"
             action="https://formspree.io/f/xrbpdvkp"
             method="POST"
