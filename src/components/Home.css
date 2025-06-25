@@ -340,3 +340,15 @@
   border-radius: 4px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 768px) {
+  .cloud-left {
+    left: -100px;
+    width: 280px;
+  }
+
+  .cloud-right {
+    right: -100px;
+    width: 280px;
+  }
+}

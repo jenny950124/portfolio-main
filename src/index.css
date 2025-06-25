@@ -28,6 +28,7 @@ a:hover {
 html, body, #root {
   scroll-behavior: auto;
   overflow-y: visible !important;
+  overflow-x: hidden !important;
   height: auto !important;
   font-family: 'Inter', sans-serif;
 }

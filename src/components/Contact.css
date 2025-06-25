@@ -140,7 +140,7 @@
 
 .bubble {
   position: absolute;
-  top: 20px;
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.85);

@@ -38,7 +38,7 @@ const ProjectSlider = () => {
       <h2 className="section-title">Featured Projects</h2>
       <Swiper
         modules={[Autoplay]}
-        slidesPerView={1.3}
+        slidesPerView={1.05}
         spaceBetween={30}
         loop={true}
         autoplay={{

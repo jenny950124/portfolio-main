@@ -89,3 +89,27 @@
     height: 700px;
   }
 }
+
+@media (max-width: 768px) {
+  .slider-card {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  .slider-overlay {
+    height: 100%;
+    transform: translateY(100%);
+    font-size: 0.9rem;
+    padding: 1.5rem;
+  }
+
+  .slider-card:hover .slider-overlay {
+    transform: translateY(0);
+  }
+
+  .slider-overlay a {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+    word-break: keep-all;
+  }
+}
