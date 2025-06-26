@@ -33,12 +33,11 @@ const Home = () => {
         </div>
 
         <div className="hero-text">
-          <h1>
-            User <span className="highlight">FOCUSED</span><br />
-            Designs built on<br />
-            <span className="highlight">EMPATHY</span> DEDICATION<br />
-            And <span className="highlight">TEAMWORK</span>
-          </h1>
+          <h1>User <span className="highlight-wrapper">FOCUSED<span className="highlight-circle"></span></span><br />
+          Designs built on<br /><span className="highlight-wrapper">EMPATHY<span className="highlight-circle"></span></span> DEDICATION<br />
+          And <span className="highlight-wrapper">TEAMWORK<span className="highlight-circle"></span></span>
+</h1>
+
         </div>
       </section>
 
@@ -55,14 +54,6 @@ const Home = () => {
           </p>
           <Link to="/projects" className="intro-button">See how I work →</Link>
         </div>
-      </section>
-
-      <section className="poster-section">
-        <img
-          src={posterMockup}
-          alt="Poster showing: This work is by Jenny Kim"
-          className="poster-image"
-        />
       </section>
     </>
   );

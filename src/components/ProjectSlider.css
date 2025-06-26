@@ -22,13 +22,15 @@
 .slider-card {
   width: 100%;
   max-width: 430px;
-  height: 600px;
   position: relative;
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease;
   margin: 0 auto;
+  background: #000;
+  display: flex;
+  flex-direction: column;
 }
 
 .slider-card:hover {
@@ -37,36 +39,56 @@
 
 .slider-card img {
   width: 100%;
-  height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
 }
 
 .slider-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%; /* 아래 반절만 오버레이 */
   background: rgba(0, 0, 0, 0.55);
   color: #fff;
-  padding: 20px;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateY(30%);
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  pointer-events: none;
+  gap: 1rem;
+  transition: background 0.3s ease;
+  height: auto;
+  min-height: 50%;
+  max-height: 100%;
+  padding-bottom: 2.5rem;
 }
 
-.slider-card:hover .slider-overlay {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+.swiper-slide {
+  overflow: visible !important;
+}
+
+.slider-overlay h3 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.slider-overlay p {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.slider-overlay a {
+  font-size: 0.95rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  background: white;
+  color: black;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.slider-overlay a:hover {
+  background: #eee;
 }
 
 @media (max-width: 1024px) {
@@ -74,42 +96,37 @@
     padding: 0 10px;
   }
 
-  .slider-overlay {
-    font-size: 0.85rem;
-  }
-
   .slider-card {
     max-width: 90%;
+  }
+
+  .slider-overlay {
+    font-size: 0.85rem;
+    padding: 1rem;
   }
 }
 
 @media (min-width: 1920px) {
   .slider-card {
     max-width: 540px;
-    height: 700px;
   }
 }
 
 @media (max-width: 768px) {
   .slider-card {
-    height: auto;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: unset;
   }
 
-  .slider-overlay {
-    height: 100%;
-    transform: translateY(100%);
-    font-size: 0.9rem;
-    padding: 1.5rem;
+  .slider-overlay h3 {
+    font-size: 1.2rem;
   }
 
-  .slider-card:hover .slider-overlay {
-    transform: translateY(0);
+  .slider-overlay p {
+    font-size: 0.95rem;
   }
 
   .slider-overlay a {
     font-size: 0.9rem;
-    padding: 10px 16px;
-    word-break: keep-all;
+    padding: 8px 16px;
   }
 }

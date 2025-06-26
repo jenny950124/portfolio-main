@@ -21,7 +21,7 @@ const projects = [
   {
     id: 2,
     title: 'Light Wins Dark',
-    description: 'An accessibility app that detects ambient light.',
+    description: 'An accessibility app for visually imapaired.',
     image: img2,
   },
   {

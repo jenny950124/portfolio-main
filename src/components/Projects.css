@@ -11,7 +11,6 @@
   color: #ffffff;
 }
 
-/* ✅ 항상 세로 정렬, 1열 */
 .project-list {
   display: flex;
   flex-direction: column;
@@ -21,35 +20,22 @@
 }
 
 .project-showcase {
-  position: relative;
   width: 100%;
   max-width: 1000px;
-  aspect-ratio: 16 / 9;
   border-radius: 30px;
   overflow: hidden;
   cursor: pointer;
+  background-color: #000; /* fallback if image fails */
+  position: relative;
 }
 
 .project-bg {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  transition: filter 0.4s ease, transform 0.4s ease;
   display: block;
-}
-
-.project-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(16px);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  color: white;
+  transition: filter 0.4s ease, transform 0.4s ease;
 }
 
 .project-showcase:hover .project-bg {
@@ -57,24 +43,43 @@
   transform: scale(1.03);
 }
 
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 2rem;
+}
+
 .project-showcase:hover .project-overlay {
   opacity: 1;
 }
 
 .project-content {
+  color: white;
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .project-content h2 {
   font-size: 2rem;
   margin-bottom: 0.8rem;
+  word-break: break-word;
 }
 
 .project-content p {
   font-size: 1.1rem;
   margin-bottom: 1.2rem;
+  word-break: break-word;
 }
 
 .project-content a,
@@ -88,8 +93,25 @@
   font-size: 1rem;
   text-decoration: none;
   transition: background 0.3s ease;
+  margin-top: 1rem;
 }
 
 .project-content a:hover {
   background: #eee;
+}
+
+/* ✅ 모바일 최적화는 자연스럽게 글자 줄기만 */
+@media (max-width: 768px) {
+  .project-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .project-content p {
+    font-size: 1rem;
+  }
+
+  .project-content a {
+    font-size: 0.95rem;
+    padding: 8px 16px;
+  }
 }

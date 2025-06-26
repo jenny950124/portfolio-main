@@ -24,20 +24,6 @@
   max-width: 800px;
   margin: 0 auto;
 }
-
-.highlight {
-  position: relative;
-  display: inline-block;
-  padding: 0.1em 0.4em; /* ✅ 여백을 내부에 줘서 답답함 해소 */
-  border: 5px solid white;
-  border-radius: 100px;
-  font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: 0.5px;
-}
-
-
-
 @keyframes draw {
   0% {
     transform: translate(-50%, -50%) scale(0);
@@ -46,6 +32,42 @@
   100% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
+  }
+}
+
+/* ✨ 새로운 동그라미 구조 */
+.highlight-wrapper {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1.4;
+  padding: 0.1em 0.4em;
+  color: white;
+}
+
+.highlight-circle {
+  position: absolute;
+  top: -6px;
+  left: -12px;
+  right: -12px;
+  bottom: -6px;
+  border: 5px solid white;
+  border-radius: 999px;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: circleOnlyFade 0.8s ease forwards;
+  animation-delay: 0.4s;
+  z-index: -1;
+}
+
+@keyframes circleOnlyFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -95,6 +117,16 @@
   100% { transform: translate(0, 0) scale(1); }
 }
 
+@keyframes circleFadeIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
 .floating-text-section {
   background: #fbd3e9;
@@ -339,16 +371,4 @@
   width: 2000px;
   border-radius: 4px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 768px) {
-  .cloud-left {
-    left: -100px;
-    width: 280px;
-  }
-
-  .cloud-right {
-    right: -100px;
-    width: 280px;
-  }
 }
