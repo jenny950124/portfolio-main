@@ -128,44 +128,6 @@
   }
 }
 
-.floating-text-section {
-  background: #fbd3e9;
-  padding: 6rem 2rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.floating-text {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-size: 3rem;
-  font-weight: bold;
-  color: #222;
-  gap: 0.4rem;
-}
-
-.floating-letter {
-  display: inline-block;
-  transition: transform 0.20s ease;
-  cursor: default;
-  will-change: transform;
-}
-
-.floating-sub {
-  font-size: 1rem;
-  margin-top: 1rem;
-  color: #555;
-}
-
-.floating-hint {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #a44aff;
-  animation: fadeBlink 2s infinite;
-}
-
 @keyframes fadeBlink {
   0%, 100% { opacity: 0.2; }
   50% { opacity: 1; }
@@ -232,7 +194,7 @@
 
 .projects-wrapper {
   padding: 6rem 1rem;
-  background: linear-gradient(to bottom, #ff3c3c, #ff0000);
+  background:#fbd3e9;
   text-align: center;
 }
 

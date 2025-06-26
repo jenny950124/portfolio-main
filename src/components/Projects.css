@@ -1,117 +1,129 @@
-.projects-wrapper {
-  padding: 4rem 1rem;
+.projects-page {
   background: #fbd3e9;
-  text-align: center;
-  overflow: hidden;
+  min-height: 100vh;
+  padding: 4rem 2rem;
 }
 
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #ffffff;
+.projects-inner {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
 }
 
-.project-list {
+.projects-tabs {
+  flex: 0 0 240px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-  width: 100%;
+  gap: 1rem;
 }
 
-.project-showcase {
-  width: 100%;
-  max-width: 1000px;
-  border-radius: 30px;
-  overflow: hidden;
+.tab {
+  background: transparent;
+  border: none;
+  padding: 0.8rem 1rem;
+  font-size: 2.5rem;
+  text-align: left;
   cursor: pointer;
-  background-color: #000; /* fallback if image fails */
-  position: relative;
+  color: white;
+  border-radius: 8px;
+  outline: none;
 }
 
-.project-bg {
+.tab:hover,
+.tab.active {
+  background: rgba(255, 255, 255, 0.6);
+  color: #fbd3e9;
+  font-weight: bold;
+}
+
+.projects-display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-left: 4rem;
+}
+
+/* ✅ 오버레이 카드 스타일 */
+.project-card-overlay {
+  position: relative;
   width: 100%;
-  height: auto;
+  max-width: 1100px;
   aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  display: block;
+  text-decoration: none;
+}
+
+.project-card-overlay img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
-  transition: filter 0.4s ease, transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 
-.project-showcase:hover .project-bg {
-  filter: blur(6px) brightness(0.6);
-  transform: scale(1.03);
+.project-card-overlay:hover img {
+  transform: scale(1.05);
 }
 
-.project-overlay {
+.project-card-overlay .overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(16px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.65);
   opacity: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   transition: opacity 0.4s ease;
+  text-align: center;
   padding: 2rem;
+  transform: translate(-50%, -50%); 
 }
 
-.project-showcase:hover .project-overlay {
+.project-card-overlay:hover .overlay {
   opacity: 1;
 }
 
-.project-content {
-  color: white;
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.project-content h2 {
+.project-card-overlay .overlay h3 {
   font-size: 2rem;
-  margin-bottom: 0.8rem;
-  word-break: break-word;
-}
-
-.project-content p {
-  font-size: 1.1rem;
-  margin-bottom: 1.2rem;
-  word-break: break-word;
-}
-
-.project-content a,
-.project-content a:visited {
-  display: inline-block;
-  background: white;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 999px;
   font-weight: bold;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: background 0.3s ease;
-  margin-top: 1rem;
+  margin: 0 0 1rem 0;
 }
 
-.project-content a:hover {
-  background: #eee;
+.project-card-overlay .overlay p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 90%;  /* 기존 700px에서 더 넓게 변경 */
+  margin: 0 auto;
+  word-wrap: break-word;  /* 텍스트가 너무 길어지면 자동으로 줄바꿈 */
+  padding: 0 1rem; /* 양옆 여백 추가로 밀림 방지 */
 }
 
-/* ✅ 모바일 최적화는 자연스럽게 글자 줄기만 */
+/* 반응형 */
 @media (max-width: 768px) {
-  .project-content h2 {
-    font-size: 1.5rem;
+  .projects-inner {
+    flex-direction: column;
   }
-
-  .project-content p {
-    font-size: 1rem;
+  .projects-tabs {
+    flex-direction: row;
+    overflow-x: auto;
   }
-
-  .project-content a {
-    font-size: 0.95rem;
-    padding: 8px 16px;
+  .tab {
+    flex: 1;
+    text-align: center;
+  }
+  .projects-display {
+    margin-left: 0;
+    margin-top: 2rem;
   }
 }
