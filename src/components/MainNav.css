@@ -35,8 +35,9 @@
   text-decoration: none;
   color: white;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 2rem;
   transition: color 0.3s ease;
+  font-family: 'Bebas Neue', cursive !important;
 }
 
 .nav-list a:hover {

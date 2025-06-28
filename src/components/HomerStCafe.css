@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500&display=swap');
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+.project-detail-wrapper {
+  background-color: #ffffff;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* 공통 섹션 */
+.overview-section {
+  background-color: #ffffff;
+}
+
+.overview-text-container {
+  max-width: 960px;
+  padding: 4rem 2rem;
+  margin-left: 5vw;
+  margin-right: auto;
+  text-align: left;
+}
+
+.overview-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.8rem;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.overview-subtitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.overview-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  max-width: 650px;
+}
+
+.overview-image-wrapper {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.overview-image-full {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* SOLUTION 이미지 */
+.solution-fullwidth-gallery {
+  display: flex;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+}
+
+.solution-gallery-image {
+  flex: 1;
+  height: 500px;
+  object-fit: cover;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.solution-gallery-image.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ✅ MOCKUP SECTION */
+.mockup-section {
+  background-color: #ffffff;
+  padding: 6rem 2rem;
+}
+
+.mockup-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+  margin-bottom: 5rem;
+}
+
+.mockup-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 380px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.mockup-column.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.mockup-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.mockup-image.mobile {
+  max-width: 260px;
+}
+
+.mockup-image.large {
+  max-width: 380px;
+}
+
+.mockup-caption {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .mockup-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mockup-column {
+    max-width: 90%;
+  }
+
+  .mockup-image.large {
+    max-width: 90%;
+  }
+
+  .mockup-image.mobile {
+    max-width: 90%;
+  }
+}
+
+.prototype-section {
+  background-color: #ffffff;
+  padding: 6rem 2rem;
+}
+
+.prototype-video-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.prototype-video {
+  width: 90%;
+  max-width: 960px;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}

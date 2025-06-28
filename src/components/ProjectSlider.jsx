@@ -4,12 +4,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
-import './Projects.css'; // 공통 스타일만 사용
+import './Projects.css';
 import ProjectCard from './ProjectCard';
 
-import img1 from '../assets/work1.jpg';
-import img2 from '../assets/work2.jpg';
-import img4 from '../assets/work4.jpg';
+import img1 from '../assets/work1.jpg'; // Find My Park
+import img2 from '../assets/app/Banner.png'; // Homer St. Café
+import img4 from '../assets/gd/gd4.png'; // Graphic Design
 
 const projects = [
   {
@@ -17,18 +17,21 @@ const projects = [
     title: 'Find My Park',
     description: 'A park-finding UX project for city explorers.',
     image: img1,
+    link: '/projects/1',
   },
   {
     id: 2,
-    title: 'Light Wins Dark',
-    description: 'An accessibility app for visually imapaired.',
+    title: 'Homer St. Café',
+    description: 'Discover a Visual Ordering Experience',
     image: img2,
+    link: '/projects/2',
   },
   {
-    id: 4,
-    title: 'Save Energy Earn Money',
-    description: 'Energy-saving platform with BC Hydro.',
+    id: 3,
+    title: 'Graphic Design Works',
+    description: 'Branding · Poster · Packaging',
     image: img4,
+    link: '/projects/3',
   },
 ];
 

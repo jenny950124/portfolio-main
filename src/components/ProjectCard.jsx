@@ -1,20 +1,17 @@
 // src/components/ProjectCard.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Projects.css'; // 공통 스타일 사용
+import './ProjectSlider.css';
 
-const ProjectCard = ({ id, title, image, description }) => {
+const ProjectCard = ({ title, description, image, link }) => {
   return (
-    <div className="project-showcase">
-      <img src={image} alt={title} className="project-bg" />
-      <div className="project-overlay">
-        <div className="project-content">
-          <h2>{title}</h2>
-          <p>{description}</p>
-          <Link to={`/projects/${id}`}>View Project ↗</Link>
-        </div>
+    <Link to={link} className="slider-card">
+      <img src={image} alt={title} />
+      <div className="slider-overlay">
+        <h3>{title}</h3>
+        <p>{description}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
