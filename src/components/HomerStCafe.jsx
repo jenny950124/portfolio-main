@@ -1,5 +1,5 @@
 import React from 'react';
-import './Homerstcafe.css';
+import './HomerStCafe.css';
 import useScrollFadeIn from '../hooks/useScrollFadeIn';
 
 import banner from '../assets/app/Banner.png';
