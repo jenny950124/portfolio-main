@@ -12,13 +12,6 @@ import p2 from '../assets/fmp/p2.png';
 import p3 from '../assets/fmp/p3.png';
 import wireframeImg from '../assets/fmp/wireframe.png';
 import outcomesImg from '../assets/fmp/outcomes.png';
-import desktop1 from '../assets/app/desktop-mockup1.png';
-import desktop2 from '../assets/app/desktop-mockup2.png';
-import desktop3 from '../assets/app/desktop-mockup3.png';
-import iphone1 from '../assets/app/iphone1.png';
-import iphone2 from '../assets/app/iphone2.png';
-import iphone3 from '../assets/app/iphone3.png';
-
 
 const ProjectDetail = () => {
   return (
@@ -35,8 +28,8 @@ const ProjectDetail = () => {
             short walk into a relaxing, personalized journey, complete with music, local cafes, and community.
           </p>
         </div>
-        <div className="overview-image-wrapper">
-          <img src={fmp2} alt="Overview visual" className="overview-image-full" />
+        <div className="fullwidth-wrapper">
+          <img src={fmp2} alt="Overview visual" className="fullwidth-image" />
         </div>
       </section>
 
@@ -53,8 +46,8 @@ const ProjectDetail = () => {
             nearest parks were. This often led to quick strolls around the block, leaving her feeling disconnected and disappointed.
           </p>
         </div>
-        <div className="overview-image-wrapper">
-          <img src={problemImg} alt="Problem visual" className="overview-image-full" />
+        <div className="fullwidth-wrapper">
+          <img src={problemImg} alt="Problem visual" className="fullwidth-image" />
         </div>
       </section>
 
@@ -86,8 +79,8 @@ const ProjectDetail = () => {
         <div className="overview-text-container">
           <h2 className="overview-title">SOLUTION</h2>
         </div>
-        <div className="solution-hero-wrapper">
-          <img src={solution1} alt="Solution visual 1" className="solution-hero-image" />
+        <div className="fullwidth-wrapper">
+          <img src={solution1} alt="Solution visual 1" className="fullwidth-image" />
         </div>
         <div className="solution-content">
           <div className="solution-text">
@@ -109,7 +102,9 @@ const ProjectDetail = () => {
 
       {/* DESIGN APPROACH */}
       <section className="design-approach-section">
-        <h2 className="overview-title">DESIGN APPROACH</h2>
+        <div className="overview-text-container">
+          <h2 className="overview-title">DESIGN APPROACH</h2>
+        </div>
         <div className="design-row">
           <img src={p1} alt="Design concept 1" className="design-img" />
           <div className="design-text yellow">
@@ -150,35 +145,39 @@ const ProjectDetail = () => {
 
       {/* OUTCOMES SECTION */}
       <section className="outcomes-section">
-        <h2 className="overview-title">OUTCOMES</h2>
-        <div className="outcomes-image-wrapper">
-          <img src={outcomesImg} alt="Outcomes visual" className="outcomes-image" />
+        <div className="overview-text-container">
+          <h2 className="overview-title">OUTCOMES</h2>
+          <div className="outcomes-image-wrapper">
+            <img src={outcomesImg} alt="Outcomes visual" className="outcomes-image" />
+          </div>
+          <div className="outcomes-text">
+            <p>Early testers said they felt more confident about exploring new areas.</p>
+            <p>
+              One friend said, “I wouldn’t have had to carry my dog around so much if I knew where to go.
+              This would've changed my whole routine.”
+            </p>
+          </div>
         </div>
-        <div className="outcomes-text">
-          <p>Early testers said they felt more confident about exploring new areas.</p>
+      </section>
+
+      {/* REFLECTION SECTION */}
+      <section className="reflection-section">
+        <div className="reflection-text">
+          <h2 className="overview-title">REFLECTION</h2>
           <p>
-            One friend said, “I wouldn’t have had to carry my dog around so much if I knew where to go.
-            This would've changed my whole routine.”
+            This project taught me the value of starting with real human pain points and designing with empathy from the beginning.
+          </p>
+          <p>
+            My initial goal was simple: to help my friend (and others like her) feel more grounded in a new place.
+            But through deeper research and interviews, I discovered a more universal insight—people, even in the busiest cities, crave moments of pause, rest, and reconnection with nature.
+          </p>
+          <p>
+            By designing from the user’s perspective, I was able to shape something that doesn’t just provide functional utility, but emotional support.
+            The result is a product that’s not only helpful but comforting—something that gives users the space to breathe in environments that often feel overwhelming.
           </p>
         </div>
       </section>
 
-          {/* REFLECTION SECTION */}
-    <section className="overview-section">
-      <div className="overview-text-container">
-        <h2 className="overview-title">REFLECTION</h2>
-        <p className="overview-description">
-          This project taught me the value of starting with real human pain points.<br />
-          My initial goal was simple. It is to help my friend (and others like her) feel more grounded in a new place. 
-          But through research, I discovered a deeper insight: Even the busiest people crave rest and nature.
-          By designing from the user’s perspective, I could shape something that offers both guidance and emotional support
-          in a city that often feels overwhelming.
-        </p>
-      </div>
-    </section>
-
-
-    
     </div>
   );
 };

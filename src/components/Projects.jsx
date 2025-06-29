@@ -12,18 +12,21 @@ const ALL_PROJECTS = [
     title: 'Find My Park',
     image: fmpImage,
     description: 'GPS Based App that Helps People Find the Nearest Parks in Busy Cities',
+    fit: 'cover',
   },
   {
     id: '2',
     title: 'Homer St Cafe',
     image: homerImage,
     description: 'Responsive restaurant website redesign',
+    fit: 'cover',
   },
   {
     id: '3',
     title: 'Graphic Design Goods',
     image: gdImage,
     description: 'A vibrant collection of bold, playful, and expressive graphic works.',
+    fit: 'contain',
   },
 ];
 
@@ -71,7 +74,11 @@ export default function Projects() {
                 key={proj.id}
                 className="project-card-overlay"
               >
-                <img src={proj.image} alt={proj.title} />
+                <img
+                  src={proj.image}
+                  alt={proj.title}
+                  className={proj.fit === 'contain' ? 'fit-contain' : 'fit-cover'}
+                />
                 <div className="overlay">
                   <h3>{proj.title}</h3>
                   <p>{proj.description}</p>

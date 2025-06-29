@@ -29,6 +29,14 @@ html, body, #root {
   text-align: left;
 }
 
+.overview-text-container.wide {
+  max-width: 1200px;
+  padding: 4rem 2rem;
+  margin-left: 5vw;
+  margin-right: auto;
+  text-align: left;
+}
+
 .overview-title {
   font-family: 'Bebas Neue', cursive;
   font-size: 2.8rem;
@@ -48,6 +56,7 @@ html, body, #root {
   color: #EFCA00;
   font-weight: bold;
 }
+
 .overview-description {
   font-family: 'Roboto', sans-serif;
   font-size: 1.05rem;
@@ -91,7 +100,7 @@ html, body, #root {
   word-break: keep-all;
 }
 
-/* ✅ SOLUTION SECTION */
+/* SOLUTION */
 .solution-section {
   background: #fff;
 }
@@ -107,6 +116,7 @@ html, body, #root {
   display: block;
   border-radius: 0;
 }
+
 .solution-content {
   display: flex;
   justify-content: space-between;
@@ -115,6 +125,7 @@ html, body, #root {
   margin: 4rem auto 6rem;
   gap: 6rem;
   max-width: 1400px;
+  flex-wrap: wrap;
 }
 
 .solution-text {
@@ -126,6 +137,9 @@ html, body, #root {
 
 .solution-side-image-wrapper {
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .solution-side-image {
@@ -136,9 +150,11 @@ html, body, #root {
   display: block;
 }
 
+/* DESIGN APPROACH */
 .design-approach-section {
-  background-color: #fff;
-  padding: 6rem 2rem 4rem;
+  padding: 4rem 5vw;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .design-row {
@@ -176,15 +192,17 @@ html, body, #root {
   font-weight: 500;
 }
 
+/* OUTCOMES */
 .outcomes-section {
-  background-color: #ffffff;
-  padding: 5rem 2rem;
+  padding: 4rem 5vw;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .outcomes-image-wrapper {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-bottom: 2rem;
+  width: 80vw;
+  max-width: 1000px;
+  margin: 2rem auto;
 }
 
 .outcomes-image {
@@ -197,7 +215,38 @@ html, body, #root {
   font-size: 1.05rem;
   line-height: 1.8;
   color: #333;
+  max-width: 1000px;
+  margin: 2rem auto 0;
+  padding: 0 1rem;
   text-align: left;
-  max-width: 650px;
-  margin-top: 2rem;
 }
+
+/* Full-width image section */
+.fullwidth-wrapper {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-bottom: 2rem;
+}
+
+.fullwidth-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.reflection-section {
+  padding: 4rem 5vw;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.reflection-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: left;
+}
+

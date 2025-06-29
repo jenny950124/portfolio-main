@@ -1,15 +1,13 @@
-// src/components/ProjectSlider.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import './ProjectSlider.css';
 
-import './Projects.css';
-import ProjectCard from './ProjectCard';
-
-import img1 from '../assets/work1.jpg'; // Find My Park
-import img2 from '../assets/app/Banner.png'; // Homer St. Café
-import img4 from '../assets/gd/gd4.png'; // Graphic Design
+import img1 from '../assets/work1.jpg';
+import img2 from '../assets/app/Banner.png';
+import img3 from '../assets/gd/cover.png';
 
 const projects = [
   {
@@ -17,6 +15,7 @@ const projects = [
     title: 'Find My Park',
     description: 'A park-finding UX project for city explorers.',
     image: img1,
+    fit: 'cover',
     link: '/projects/1',
   },
   {
@@ -24,46 +23,61 @@ const projects = [
     title: 'Homer St. Café',
     description: 'Discover a Visual Ordering Experience',
     image: img2,
+    fit: 'cover',
     link: '/projects/2',
   },
   {
     id: 3,
     title: 'Graphic Design Works',
     description: 'Branding · Poster · Packaging',
-    image: img4,
+    image: img3,
+    fit: 'contain',
     link: '/projects/3',
   },
 ];
 
-const ProjectSlider = () => {
+export default function ProjectSlider() {
   return (
     <section className="projects-wrapper">
-      <h2 className="section-title">Featured Projects</h2>
+    <h2 className="section-title">
+  {"Featured Projects".split("").map((char, idx) => (
+    <span key={idx} className="wavy-letter" style={{ animationDelay: `${idx * 0.08}s` }}>
+      {char === " " ? "\u00A0" : char}
+    </span>
+  ))}
+</h2>
+
       <Swiper
         modules={[Autoplay]}
-        slidesPerView={1.05}
-        spaceBetween={30}
+        spaceBetween={20}
         loop={true}
-        autoplay={{
-          delay: 0,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        speed={4000}
+        slidesPerGroup={1}
+        autoplay={{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+        speed={800}
         grabCursor={true}
         breakpoints={{
+          0: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
-          1200: { slidesPerView: 3 },
+          1024: { slidesPerView: 3 },
         }}
+        className="slider-swiper"
       >
-        {projects.map((project) => (
-          <SwiperSlide key={project.id}>
-            <ProjectCard {...project} />
+        {projects.map((p) => (
+          <SwiperSlide key={p.id} className="slider-slide">
+            <Link to={p.link} className="slider-card">
+              <img
+                src={p.image}
+                alt={p.title}
+                className={p.fit === 'contain' ? 'img-contain' : 'img-cover'}
+              />
+              <div className="slider-overlay">
+                <h3>{p.title}</h3>
+                <p>{p.description}</p>
+              </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
     </section>
   );
-};
-
-export default ProjectSlider;
+}

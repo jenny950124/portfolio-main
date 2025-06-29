@@ -12,6 +12,14 @@ const Footer = () => {
           <Link to="/about">ABOUT</Link>
           <Link to="/projects">PROJECTS</Link>
           <Link to="/contact">CONTACT</Link>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-link"
+          >
+            VIEW RESUME
+          </a>
         </div>
 
         {/* 가운데: 이메일 */}

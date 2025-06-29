@@ -73,6 +73,33 @@ footer {
   text-align: center;
 }
 
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.footer-nav a:hover {
+  color: #ff9d9d;
+}
+
+.resume-link {
+  padding-top: 6px;
+  font-size: 15px;
+  color: #ffebeb;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 10px;
+}
+
+.resume-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+
 /* ✅ 반응형 스타일 */
 @media (max-width: 768px) {
   .footer-grid {

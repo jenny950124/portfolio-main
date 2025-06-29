@@ -23,7 +23,7 @@ const GraphicDesign = () => {
           </p>
         </div>
         <div className="overview-image-wrapper">
-          <img src={gd1} alt="Overview Graphic Design" className="overview-image-full" />
+          <img src={gd1} alt="Overview Graphic Design" className="responsive-image" />
         </div>
       </section>
 
@@ -37,7 +37,7 @@ const GraphicDesign = () => {
           </p>
         </div>
         <div className="overview-image-wrapper">
-          <img src={gd2} alt="Problem Graphic" className="overview-image-full" />
+          <img src={gd2} alt="Problem Graphic" className="responsive-image" />
         </div>
       </section>
 
@@ -51,7 +51,7 @@ const GraphicDesign = () => {
           </p>
         </div>
         <div className="overview-image-wrapper">
-          <img src={gd3} alt="Research insight" className="overview-image-full" />
+          <img src={gd3} alt="Research insight" className="responsive-image" />
         </div>
       </section>
 
@@ -65,7 +65,7 @@ const GraphicDesign = () => {
           </p>
         </div>
         <div className="overview-image-wrapper">
-          <img src={gd4} alt="Solution Design" className="overview-image-full" />
+          <img src={gd4} alt="Solution Design" className="responsive-image" />
         </div>
       </section>
 
@@ -79,7 +79,7 @@ const GraphicDesign = () => {
           </p>
         </div>
         <div className="overview-image-wrapper">
-          <img src={gd5} alt="Design process" className="overview-image-full" />
+          <img src={gd5} alt="Design process" className="responsive-image" />
         </div>
       </section>
 
@@ -93,7 +93,7 @@ const GraphicDesign = () => {
           </p>
         </div>
         <div className="overview-image-wrapper">
-          <img src={gd6} alt="Outcomes result" className="overview-image-full" />
+          <img src={gd6} alt="Outcomes result" className="responsive-image" />
         </div>
       </section>
 

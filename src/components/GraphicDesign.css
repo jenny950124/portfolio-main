@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500&display=swap');
 
-/* 기본 설정 */
+/* ── 기본 설정 ── */
 html, body, #root {
   margin: 0;
   padding: 0;
@@ -16,16 +16,16 @@ html, body, #root {
   overflow-x: hidden;
 }
 
-/* 공통 섹션 */
+/* ── 공통 섹션 ── */
 .overview-section {
   background-color: #ffffff;
 }
 
+/* 텍스트 컨테이너 */
 .overview-text-container {
   max-width: 960px;
   padding: 4rem 2rem;
-  margin-left: 5vw;
-  margin-right: auto;
+  margin: 0 auto;
   text-align: left;
 }
 
@@ -37,43 +37,17 @@ html, body, #root {
 }
 
 .overview-subtitle {
-  font-family: 'Roboto', sans-serif;
   font-size: 1.8rem;
   font-weight: 400;
   color: #111;
   margin-bottom: 1rem;
 }
 
-.overview-quote {
-  color: #EFCA00;
-  font-weight: bold;
-}
 .overview-description {
-  font-family: 'Roboto', sans-serif;
   font-size: 1.05rem;
   line-height: 1.8;
   color: #333;
   max-width: 650px;
-}
-
-.overview-image-wrapper {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-}
-
-.overview-image-full {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* RESEARCH */
-.research-image {
-  max-width: 960px;
-  width: 90%;
-  height: auto;
-  display: block;
-  margin: 2rem auto;
 }
 
 .insight-list-numbered {
@@ -85,119 +59,17 @@ html, body, #root {
   color: #333;
 }
 
-.no-wrap-text {
-  white-space: nowrap;
-  overflow-wrap: normal;
-  word-break: keep-all;
+/* ── 이미지 래퍼 + 이미지 축소 중앙정렬 ── */
+.overview-image-wrapper {
+  max-width: 960px;
+  width: 90%;
+  margin: 2rem auto;
 }
 
-/* ✅ SOLUTION SECTION */
-.solution-section {
-  background: #fff;
-}
-
-.solution-hero-wrapper {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-}
-
-.solution-hero-image {
+.responsive-image {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 0;
-}
-.solution-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5vw;
-  margin: 4rem auto 6rem;
-  gap: 6rem;
-  max-width: 1400px;
-}
-
-.solution-text {
-  flex: 1;
-  font-size: 1.2rem;
-  line-height: 2.2;
-  color: #111;
-}
-
-.solution-side-image-wrapper {
-  flex-shrink: 0;
-}
-
-.solution-side-image {
-  width: 40vw;
-  max-width: 640px;
-  height: auto;
-  border-radius: 2px;
-  display: block;
-}
-
-.design-approach-section {
-  background-color: #fff;
-  padding: 6rem 2rem 4rem;
-}
-
-.design-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
-  margin-bottom: 4rem;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  flex-wrap: wrap;
-}
-
-.design-row.reverse {
-  flex-direction: row-reverse;
-}
-
-.design-img {
-  max-width: 500px;
-  width: 100%;
-  height: auto;
-  flex-shrink: 0;
-}
-
-.design-text {
-  flex: 1;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #333;
-}
-
-.design-text.yellow {
-  color: #101010;
-  font-weight: 500;
-}
-
-.outcomes-section {
-  background-color: #ffffff;
-  padding: 5rem 2rem;
-}
-
-.outcomes-image-wrapper {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-bottom: 2rem;
-}
-
-.outcomes-image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.outcomes-text {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #333;
-  text-align: left;
-  max-width: 650px;
-  margin-top: 2rem;
+  object-fit: contain;
+  border-radius: 0.5rem;
 }
