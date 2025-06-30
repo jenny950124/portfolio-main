@@ -20,26 +20,19 @@
   color: white;
   z-index: 2;
   position: relative;
-  margin-top: 0;   /* ✅ 위쪽 마진 제거 */
+  margin-top: 3px;  
 }
 
 .intro-heading {
-  font-size: 4rem; 
+  font-size: 3rem; 
   font-weight: 700;
   color: white;
   margin: 0;
   text-align: center;
 }
 
-
-/* .hero-heading {
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: white;
-} */
-
 .hero-text h1 {
-  font-size: 4.2rem;
+  font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.4;
   text-transform: none;
@@ -51,11 +44,11 @@
 
 .line {
   display: inline-block;
-  font-size: 4.2rem;
+  font-size: 3.5rem;
 }
 
 .small-text {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   color: white;
 }
@@ -308,28 +301,7 @@
   background: #eee;
 }
 
-.floating-hint {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #c44aff;
-  z-index: 2;
-  position: relative;
-}
 
-.poster-section {
-  background: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6rem 2rem;
-}
-
-.poster-image {
-  max-width: 100%;
-  width: 2000px;
-  border-radius: 4px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
-}
 
 /* 비행기처럼 왼쪽에서 오른쪽으로 날아오기 */
 .fly-in {
