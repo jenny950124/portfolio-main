@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
@@ -37,22 +37,46 @@ const projects = [
 ];
 
 export default function ProjectSlider() {
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      if (swiperRef.current && swiperRef.current.swiper) {
+        swiperRef.current.swiper.update(); // Swiper 강제 업데이트
+        window.dispatchEvent(new Event('resize')); // ⬅️ macOS에서도 강제로 resize 이벤트 발생
+      }
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, []);
+
   return (
     <section className="projects-wrapper">
-    <h2 className="section-title">
-  {"Featured Projects".split("").map((char, idx) => (
-    <span key={idx} className="wavy-letter" style={{ animationDelay: `${idx * 0.08}s` }}>
-      {char === " " ? "\u00A0" : char}
-    </span>
-  ))}
-</h2>
+      <h2 className="section-title">
+        {"Selected Works".split("").map((char, idx) => (
+          <span key={idx} className="wavy-letter" style={{ animationDelay: `${idx * 0.08}s` }}>
+            {char === " " ? "\u00A0" : char}
+          </span>
+        ))}
+      </h2>
 
       <Swiper
+        ref={swiperRef}
         modules={[Autoplay]}
         spaceBetween={20}
         loop={true}
         slidesPerGroup={1}
-        autoplay={{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        observer={true}
+        observeParents={true}
+        resizeObserver={true}
         speed={800}
         grabCursor={true}
         breakpoints={{

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap');
+
 .home {
   background: #fbd3e9;
   min-height: 100vh;
@@ -7,6 +9,7 @@
   align-items: center;
   justify-content: center;
   padding-top: 10px;
+  font-family: 'Sora', sans-serif;
 }
 
 .hero-text {
@@ -16,26 +19,48 @@
   position: relative;
 }
 
+.intro-heading {
+  font-size: 4rem; 
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+
+.hero-heading {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white;
+}
+
 .hero-text h1 {
-  font-size: 4.5rem;
+  font-size: 4.2rem;
   font-weight: 800;
   line-height: 1.4;
   text-transform: none;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-}
-@keyframes draw {
-  0% {
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
+  color: white;
 }
 
-/* ✨ 새로운 동그라미 구조 */
+.line {
+  display: inline-block;
+  font-size: 4.2rem;
+}
+
+.small-text {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.space-gap {
+  display: inline-block;
+  width: 0.5em;
+}
+
+/* Highlight Circle */
 .highlight-wrapper {
   position: relative;
   display: inline-block;
@@ -48,7 +73,7 @@
 .highlight-circle {
   position: absolute;
   top: -6px;
-  left: -12px;
+  left: -16px;
   right: -12px;
   bottom: -6px;
   border: 5px solid white;
@@ -71,7 +96,7 @@
   }
 }
 
-
+/* Clouds */
 .cloud {
   position: absolute;
   width: 420px;
@@ -83,18 +108,17 @@
 
 .cloud-left {
   top: -10%;
-  left: -300px;
+  left: -220px; /* ← 안쪽으로 이동 */
 }
 
 .cloud-right {
   top: 10%;
-  right: 200px;
+  right: 150px; /* ← 안쪽으로 이동 */
 }
 
 .cloud:hover {
   transform: scale(1.1);
 }
-
 
 .cloud.flash-left {
   animation: flash-left 0.6s ease-in-out;
@@ -117,37 +141,33 @@
   100% { transform: translate(0, 0) scale(1); }
 }
 
-@keyframes circleFadeIn {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeBlink {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 1; }
-}
-
-
 .intro-section {
   background: #ffffff;
   color: #111;
   text-align: left;
-  padding: 8rem 2rem;
+  padding: 8rem 10rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
+.intro-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr; /* 왼쪽 이미지가 더 넓게 보이도록 */
+  gap: 4rem;
+  align-items: center;
+}
+
+.intro-image img {
+  width: 500px;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
 .intro-content {
-  max-width: 900px;
-  width: 100%;
-  padding: 2rem;
+  max-width: 600px;
+  margin-left: 5rem;
 }
 
 .intro-step {
@@ -194,7 +214,7 @@
 
 .projects-wrapper {
   padding: 6rem 1rem;
-  background:#fbd3e9;
+  background: #ffffff;
   text-align: center;
 }
 
@@ -282,36 +302,6 @@
   background: #eee;
 }
 
-.emoji-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.emoji {
-  position: absolute;
-  font-size: 1.8rem;
-  opacity: 0.7;
-  animation: floatEmoji 8s infinite ease-in-out;
-}
-
-.emoji:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
-.emoji:nth-child(2) { top: 25%; left: 70%; animation-delay: 1.2s; }
-.emoji:nth-child(3) { top: 60%; left: 35%; animation-delay: 2.4s; }
-.emoji:nth-child(4) { top: 75%; left: 80%; animation-delay: 3.6s; }
-.emoji:nth-child(5) { top: 50%; left: 10%; animation-delay: 4.8s; }
-
-@keyframes floatEmoji {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-30px) rotate(10deg); }
-  100% { transform: translateY(0) rotate(0deg); }
-}
-
 .floating-hint {
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -333,4 +323,72 @@
   width: 2000px;
   border-radius: 4px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* 비행기처럼 왼쪽에서 오른쪽으로 날아오기 */
+.fly-in {
+  animation: flyInFromLeft 2s ease-out forwards;
+  opacity: 0;
+  transform: translateX(-100vw); /* 시작: 왼쪽 바깥 */
+}
+
+@keyframes flyInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw) rotate(-2deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(20px) rotate(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+@media (max-width: 1024px) {
+  .intro-section {
+    padding: 4rem 2rem;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .intro-image img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .intro-content {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .intro-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .intro-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .intro-step {
+    font-size: 0.9rem;
+  }
+
+  .intro-button {
+    font-size: 0.95rem;
+    padding: 12px 24px;
+  }
 }
