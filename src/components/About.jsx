@@ -12,9 +12,11 @@ const About = () => {
   return (
     <section className="about-page">
       <div className="intro-heading">
-        <p className="intro-line">Hi, I'm <span className="wave">👋</span></p>
-        <h1 className="intro-name">Jenny “NaYeon” Kim</h1>
-        <p className="intro-role">UX/UI Designer & Developer</p>
+        <h1 className="intro-full">
+          Hi, I'm Jenny Kim</h1>
+        <p className="intro-role">
+          💡 UX/UI Designer <br />💻 Front-end Developer
+        </p>
       </div>
 
       <div className="about-collage-section">

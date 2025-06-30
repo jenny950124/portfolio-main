@@ -1,28 +1,46 @@
 .about-page {
   background: linear-gradient(to bottom, #fbd3e9 0%, #ff4b5c 100%);
   color: white;
-  padding: 6rem 2rem;
+  padding: 6rem 2rem 3rem; /* 상단 여백을 크게 줌 */
 }
 
 .intro-heading {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem; /* 메뉴와 콘텐츠 사이 간격 */
 }
 
-.intro-line {
-  font-size: 1.4rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.intro-name {
-  font-size: 3.2rem;
-  font-weight: bold;
+.intro-full {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  max-width: 90%;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
 }
 
 .intro-role {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 2rem;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
 }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
 
 .about-collage-section {
   max-width: 1200px;
@@ -173,7 +191,32 @@
     max-width: 300px;
     margin: 2rem auto 0;
   }
+
+  .bio-left {
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .section-subtitle {
+    text-align: center !important;
+  }
+
+  .keyword-popup-container {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .keyword-label {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .bio-section p {
+    text-align: left;
+  }
 }
+
 .concept-slider-wrapper {
   width: 100%;
   max-width: 400px;
@@ -205,30 +248,4 @@
 .bio-row,
 .collage-grid {
   overflow-x: hidden;
-}
-
-@media (max-width: 768px) {
-  .bio-left {
-    padding: 0 1.5rem;
-    text-align: center;
-  }
-
-  .section-subtitle {
-    text-align: center !important;
-  }
-
-  .keyword-popup-container {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .keyword-label {
-    font-size: 1rem;
-    padding: 0.6rem 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .bio-section p {
-    text-align: left;
-  }
 }
