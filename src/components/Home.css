@@ -2,14 +2,14 @@
 
 .home {
   background: #fbd3e9;
-  min-height: 100vh; /* 다시 100vh로 줄임 */
+  min-height: auto;            
+  padding: 3.5rem 1rem 2rem;   
   position: relative;
   overflow: hidden;
   display: flex;
-  flex-direction: column;     /* 수직 정렬을 위해 추가 */
-  align-items: center;        /* 수평 가운데 정렬 유지 */
-  justify-content: flex-start; /* ✅ 위에서부터 정렬 시작 */
-  padding-top: 3.5rem;          /* ✅ 여백 줄이고 조절 가능 (1~2rem 추천) */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;    
   font-family: 'Sora', sans-serif;
 }
 
@@ -46,6 +46,7 @@
   max-width: 900px;
   margin: 0 auto;
   color: white;
+  margin-bottom: 0;
 }
 
 .line {
@@ -153,6 +154,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 0;
 }
 
 .intro-grid {
