@@ -63,7 +63,7 @@ const Home = () => {
           <div className="intro-content">
             <span className="intro-step">About</span>
             <h2 className="intro-heading-text">
-              <span>From Korea to Canada &</span>{' '}
+              <span>From Korea to Canada &</span>{' '}<br/>
               <span>
                 Who am I And Why I <span className="no-wrap">Design.</span>
               </span>
