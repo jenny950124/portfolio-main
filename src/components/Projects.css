@@ -1,0 +1,69 @@
+/* 페이지 래퍼 */
+.work-grid-page {
+  padding: 6rem 4rem;
+  background: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* 2열 그리드 */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 카드(클래스명 충돌 방지 위해 work- 접두어) */
+.work-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+  cursor: pointer;
+}
+.work-card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(0,0,0,.08); }
+.work-card:focus { outline: 2px solid #111; outline-offset: 3px; }
+
+/* 고정 비율 썸네일 컨테이너 */
+.work-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;     /* → 모든 카드 동일 비율 */
+  background: #f6f6f6;
+  overflow: hidden;
+}
+.work-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* → 꽉 차게, 잘리는 건 허용 */
+  display: block;
+}
+
+/* 메타 정보 */
+.work-meta { padding: 1rem; }
+.work-meta h4 {
+  margin: .5rem 0 .25rem;
+  font-size: 1rem;
+  color: #000;
+}
+.work-meta p {
+  margin: 0;
+  font-size: .9rem;
+  color: #969696;
+  line-height: 1.5;
+}
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .work-grid-page { padding: 4rem 2rem; }
+  .work-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media (max-width: 768px) {
+  .work-grid-page { padding: 3rem 1.5rem; }
+  .work-grid { grid-template-columns: 1fr; }
+  .work-meta h4 { font-size: .95rem; }
+  .work-meta p { font-size: .85rem; }
+}

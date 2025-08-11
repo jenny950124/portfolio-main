@@ -1,0 +1,30 @@
+.project-nav-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* 핵심: 양쪽으로 배치 */
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+  z-index: 100;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000000;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.nav-button:hover {
+  transform: translateY(-2px);
+}
+
+.nav-button:focus {
+  outline: none;
+  box-shadow: none;
+}

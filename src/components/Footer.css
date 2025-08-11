@@ -1,0 +1,73 @@
+.site-footer {
+  margin-top: clamp(4px, 1.2vw, 12px);         
+  border-top: 1px solid var(--edge, #e5e7eb);
+  background: #ffe3e3;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px clamp(1rem, 3vw, 2rem);       
+  display: grid;
+  grid-template-columns: auto 1fr auto;         
+  align-items: center;
+  gap: clamp(8px, 1.5vw, 16px);                 
+}
+
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 700;
+  color: var(--ink, #1f2a37);
+  letter-spacing: .02em;                        
+}
+.brand-mark {
+  display: grid; place-items: center;
+  width: 24px; height: 24px;                    
+  border-radius: 7px;
+  background: linear-gradient(135deg, #ffb9e1, #ff95cc);
+  color: #111; font-size: .8rem; font-weight: 800;
+}
+.brand-name { opacity: .9; font-size: .95rem; }
+
+.footer-copy {
+  margin: .15rem 0 0;
+  color: var(--ink, #1f2a37);
+  opacity: .55;
+  font-size: .85rem;                           
+}
+
+/* 네비게이션 */
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 1.8vw, 18px);              
+}
+.footer-link {
+  color: var(--ink, #1f2a37);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: .95rem;                            
+  line-height: 1;
+}
+.footer-link:hover { text-decoration: underline; }
+
+.footer-social { display: flex; gap: .5rem; }  
+.icon-link { display: inline-flex; line-height: 0; }
+.icon-link img { width: 18px; height: 18px; opacity: .9; } 
+.icon-link:hover img { opacity: 1; }
+
+
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 12px clamp(1rem, 4vw, 1.5rem);
+    text-align: center;
+    gap: 8px;
+  }
+  .footer-nav { margin-top: 2px; }
+  .footer-social { margin-top: 2px; }
+}

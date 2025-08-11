@@ -1,0 +1,136 @@
+/* Home.css — NO-OVERLAP + WIDER PASS (final) */
+
+:root {
+  --nav-h: 72px;
+
+  /* 상단 여백 */
+  --page-down-desktop: 24px;
+  --page-down-tablet: 20px;
+  --page-down-mobile: 16px;
+}
+
+* { box-sizing: border-box; }
+html, body { overflow-x: hidden; }
+
+/* ============== 레이아웃 ============== */
+.home {
+  /* 노브: 오른쪽(보딩패스) 최대폭 + 컬럼 간격 */
+  --right-max: min(46vw, 920px);       /* 더 크게 보이게 하려면 960~1000px도 OK */
+  --col-gap: clamp(28px, 4vw, 88px);   /* 좌우 간격 */
+
+  width: 100vw;
+  max-width: 100vw;
+
+  display: grid;
+  /* 왼쪽은 유동(최소 420px), 오른쪽은 위 노브로 제어 → 절대 겹치지 않음 */
+  grid-template-columns: minmax(420px, 1fr) var(--right-max);
+  column-gap: var(--col-gap);
+  align-items: start;
+
+  padding:
+    calc(var(--nav-h) + 72px + var(--page-down-desktop))
+    clamp(16px, 6vw, 96px)
+    1.25rem;
+
+  background: #fff;
+  font-family: "Space Grotesk", sans-serif;
+
+  /* 레이어 분리 */
+  isolation: isolate;
+}
+
+/* 왼쪽 소개글 */
+.home-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  color: #111;
+  max-width: 70ch;
+  justify-self: start;
+
+  /* 소개글은 항상 위 레이어 */
+  position: relative;
+  z-index: 2;
+}
+.home-left p {
+  font-size: clamp(1rem, 0.6rem + 1.2vw, 1.6rem);
+  line-height: 1.65;
+  margin: 0;
+  word-break: keep-all;
+}
+.home-left strong { font-weight: 700; }
+
+/* CTA 버튼 */
+.resume-button {
+  background-color: #FFB9E1;
+  color: #111;
+  font-weight: 700;
+  border: none;
+  border-radius: 28px;
+  padding: clamp(14px, 1.6vw, 18px) clamp(28px, 3.6vw, 36px);
+  font-size: clamp(1.1rem, 0.9rem + 0.6vw, 1.35rem);
+  cursor: pointer;
+  width: fit-content;
+  font-family: 'Space Grotesk', sans-serif;
+  box-shadow: 0 2px 10px rgba(255,185,225,.40);
+  transition: transform .2s ease, box-shadow .2s ease, color .2s ease;
+}
+.resume-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255,185,225,.50);
+  color: #ff0000;
+}
+.resume-button:focus-visible {
+  outline: 3px solid #ff4d88;
+  outline-offset: 3px;
+}
+
+/* 오른쪽: 보딩패스 그룹 */
+.home-right {
+  display: flex;
+  align-items: flex-start;
+  justify-self: end;
+  position: relative;
+  z-index: 1;
+  width: var(--right-max);
+}
+
+/* 보딩패스 + 플라이트패스 컨테이너 */
+.ticket-group {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.6rem, 1.2vw, 0.9rem);
+  width: 100%;
+  max-width: var(--right-max);
+
+  /* ✅ 겹침 방지: 당김(translateX) 금지 */
+  transform: none !important;
+}
+
+/* ======= Tablet ======= */
+@media (max-width: 1100px) {
+  .home {
+    grid-template-columns: 1fr;      /* 위/아래 스택 */
+    row-gap: 1.4rem;
+    padding:
+      calc(var(--nav-h) + 56px + var(--page-down-tablet))
+      clamp(14px, 5vw, 40px)
+      1rem;
+  }
+  .home-right { justify-self: end; width: min(760px, 100%); }
+  .ticket-group { width: min(760px, 100%); max-width: 100%; }
+}
+
+/* ======= Mobile ======= */
+@media (max-width: 768px) {
+  .home {
+    padding:
+      calc(var(--nav-h) + 44px + var(--page-down-mobile))
+      clamp(12px, 4.5vw, 24px)
+      .75rem;
+  }
+  .home-left p {
+    font-size: clamp(.98rem, .82rem + .6vw, 1.15rem);
+    line-height: 1.55;
+  }
+}

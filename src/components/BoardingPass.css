@@ -1,0 +1,174 @@
+/* ===== Theme ===== */
+:root {
+  --ink: #1f2a37;
+  --ink-soft: #364152;
+  --paper: #ffffff;
+  --edge: #e5e7eb;
+  --pink: #ff95cc;
+  --shadow: 0 10px 30px rgba(16, 24, 40, .08);
+  --r: 18px;            /* ticket radius */
+  --perf-gap: 12px;     /* perforation dot gap */
+}
+
+/* 전체 티켓 레이아웃: 본표 | 절개선 | 스텁 */
+.bp {
+  display: grid;
+  grid-template-columns: 1fr 56px 300px;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* 개별 패널 */
+.panel {
+  background: var(--paper);
+  border: 1px solid var(--edge);
+  position: relative;
+  box-shadow: var(--shadow);
+}
+.panel-left {
+  border-right: none;
+  border-top-left-radius: var(--r);
+  border-bottom-left-radius: var(--r);
+}
+.panel-right {
+  border-left: none;
+  border-top-right-radius: var(--r);
+  border-bottom-right-radius: var(--r);
+}
+
+/* 안쪽 여백/타이포 */
+.panel-inner {
+  padding: 2.2rem 2.4rem;
+  color: var(--ink);
+}
+.panel-inner.right { height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+
+.brand {
+  display: flex; align-items: center; gap: .6rem;
+  font-weight: 700; color: var(--ink);
+  letter-spacing: .06em; text-transform: uppercase;
+  margin-bottom: .6rem;
+}
+.brand-mark {
+  display: grid; place-items: center;
+  width: 28px; height: 28px; border-radius: 8px;
+  background: linear-gradient(135deg, #ffb9e1, #ff95cc);
+  color: #111; font-size: .9rem; font-weight: 800;
+}
+.brand-name { opacity: .9; }
+
+.title {
+  margin: .2rem 0 1.2rem;
+  color: #ff4d88;
+  font-size: 1.35rem;
+  letter-spacing: .05em;
+}
+
+/* 본표 정보 그리드 */
+.grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: .5rem 1rem;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+}
+.label {
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+.value {
+  color: var(--ink);
+  word-break: keep-all;
+}
+
+/* 바코드(가짜) */
+.barcode {
+  height: 46px;
+  border-radius: 8px;
+  background:
+    repeating-linear-gradient(90deg, #111 0 3px, transparent 3px 6px),
+    linear-gradient(#000, #000);
+  opacity: .85;
+}
+
+/* 절개선(도트라인 + 가위 표시) */
+.perf {
+  position: relative;
+  background: var(--paper);
+  border-top: 1px solid var(--edge);
+  border-bottom: 1px solid var(--edge);
+}
+.perf::before {
+  content: "";
+  position: absolute; left: 50%; top: 14px; bottom: 14px;
+  transform: translateX(-50%);
+  width: 0;
+  border-left: 2px dashed var(--pink);
+  opacity: .9;
+}
+.scissors {
+  position: absolute;
+  top: 8px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px; opacity: .6;
+}
+
+/* 스텁(오른쪽) */
+.stub-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.stub-item { display: grid; grid-template-columns: 1fr; gap: .25rem; }
+.stub-label { color: var(--ink-soft); font-weight: 700; letter-spacing: .04em; }
+.stub-value { color: var(--ink); font-weight: 700; }
+.mono { font-variant-numeric: tabular-nums; }
+.big { font-size: 2.2rem; line-height: 1; letter-spacing: .04em; }
+
+.qr {
+  align-self: flex-end;
+  width: 112px; height: 112px; border-radius: 10px;
+  background:
+    linear-gradient(#fff,#fff) padding-box,
+    repeating-linear-gradient(90deg, #111 0 4px, transparent 4px 8px),
+    repeating-linear-gradient(0deg, #111 0 4px, transparent 4px 8px);
+  border: 6px solid #111;
+  box-shadow: 0 4px 16px rgba(0,0,0,.06);
+}
+
+/* 찢기는 애니메이션 (패널 자체 이동) */
+.is-tearing .perf { animation: perf-fade .9s ease forwards .1s; }
+.is-tearing .panel-left  { animation: tear-left  .95s cubic-bezier(.19,.8,.3,1) forwards; }
+.is-tearing .panel-right { animation: tear-right .95s cubic-bezier(.19,.8,.3,1) forwards; }
+
+@keyframes tear-left {
+  0% { transform: translateX(0) rotate(0); }
+  30% { transform: translateX(-6px) rotate(-1.2deg); }
+  100%{ transform: translateX(-72px) rotate(-3deg); }
+}
+@keyframes tear-right {
+  0% { transform: translateX(0) rotate(0); }
+  30% { transform: translateX(6px) rotate(1.2deg); }
+  100%{ transform: translateX(92px) rotate(3.2deg); }
+}
+@keyframes perf-fade { 0%{opacity:1} 60%{opacity:.6} 100%{opacity:0} }
+
+/* 호버 살짝 띄우기(선택) */
+.panel:hover { transform: translateY(-2px); transition: transform .2s ease; }
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .bp { grid-template-columns: 1fr 48px 260px; }
+  .panel-inner { padding: 1.8rem 2rem; }
+  .big { font-size: 1.9rem; }
+  .qr { width: 96px; height: 96px; }
+}
+@media (max-width: 768px) {
+  .bp { grid-template-columns: 1fr 40px 200px; }
+  .panel-inner { padding: 1.4rem 1.6rem; }
+  .grid { grid-template-columns: 120px 1fr; }
+  .big { font-size: 1.6rem; }
+  .qr { width: 84px; height: 84px; }
+}

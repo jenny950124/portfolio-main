@@ -1,0 +1,173 @@
+/* HomerStCafe.css — Solution centering + Problem 2-up + Mockup grid + Prototype card */
+.homerst-page { overflow-x: hidden; }
+
+/* ==================== Problem: two-up images ==================== */
+.homerst-page #problem.section-block{
+  /* Outcomes와 같은 시작 패딩을 쓰고 싶다면 유지 */
+  padding: var(--space-12) var(--page-pad-x);
+}
+.homerst-page #problem .problem-image{
+  max-width: min(1400px, 95vw);
+  width: 100%;
+  margin: var(--space-2) auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(16px, 2vw, 28px);
+  flex-wrap: wrap; /* 좁은 화면에서 아래로 줄바꿈 */
+}
+.homerst-page #problem .problem-image img{
+  width: clamp(420px, 42vw, 560px);
+  height: clamp(260px, 30vw, 360px);
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* ==================== Solution: 중앙 정렬 + 동일 크기 ==================== */
+.homerst-page .solution-section .solution-image-row{
+  max-width: min(1400px, 95vw);
+  width: 100%;
+  margin: var(--space-2) auto 0;
+  padding-left: 0; /* PowerPause 기본 8% 제거 */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(16px, 2vw, 28px);
+  flex-wrap: wrap;
+}
+.homerst-page .solution-section .solution-image-row img{
+  width: clamp(300px, 28vw, 420px);
+  height: clamp(220px, 22vw, 300px);
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* ==================== Mockup (Wireframes) ==================== */
+.mockup-section .overview-text-container{
+  max-width: 960px;
+  padding: var(--space-2) var(--space-2);
+  margin-left: var(--page-pad-x);
+  margin-right: auto;
+  text-align: left;
+}
+.mockup-section .overview-title{
+  font-family:'Bebas Neue', sans-serif;
+  font-size: clamp(1.6rem, 1.1rem + 2.5vw, 2.4rem);
+  color:#000; margin-bottom: 1rem;
+}
+.mockup-section .overview-description{
+  font-size:clamp(.98rem,.9rem + .3vw,1.05rem);
+  line-height:1.8; color:#333; max-width:650px;
+}
+
+.mockup-group{
+  max-width: min(1400px, 95vw);
+  margin: var(--space-4) auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(20px, 3vw, 40px);
+  flex-wrap: wrap;
+}
+.mockup-column{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.mockup-image{
+  display:block;
+  border-radius:12px;
+  height:auto;
+}
+/* 데스크탑 목업 폭 */
+.mockup-image.large{
+  width: clamp(320px, 26vw, 420px);
+}
+/* 모바일(앱) 목업 폭 */
+.mockup-image.mobile.large{
+  width: clamp(180px, 18vw, 260px);
+}
+.mockup-caption{
+  margin-top:.75rem;
+  font-size:1.02rem;
+  line-height:1.45;
+  color:#444;
+  max-width:420px;
+}
+
+/* ==================== Prototype ==================== */
+.prototype-section{
+  padding: var(--space-12) var(--page-pad-x);
+}
+.prototype-section .overview-text-container{
+  max-width: 960px;
+  margin-left: var(--page-pad-x);
+  margin-right: auto;
+  text-align: left;
+  padding: var(--space-2) var(--space-2);
+}
+.prototype-section .overview-title{
+  font-family:'Bebas Neue', sans-serif;
+  font-size: clamp(1.6rem, 1.1rem + 2.5vw, 2.4rem);
+  color:#000; margin-bottom: 1rem;
+}
+.prototype-section .overview-description{
+  font-size:clamp(.98rem,.9rem + .3vw,1.05rem);
+  line-height:1.8; color:#333; max-width:650px;
+}
+.prototype-video-wrapper{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top: var(--space-6);
+}
+.prototype-video{
+  width: min(1100px, 96vw);
+  border-radius: 16px;
+  background:#000; /* 레터박스 */
+  box-shadow: 0 18px 50px rgba(0,0,0,.28);
+  display:block;
+  outline:none;
+}
+
+/* ==================== Center rail unify: 본문 시작선 중앙 통일 ==================== */
+/* 각 섹션의 ‘첫 문단(설명/콜아웃)’을 중앙 레일에 올리기 */
+.homerst-page .problem-section > p,
+.homerst-page .research-section > p,
+.homerst-page .solution-section > p,
+.homerst-page .outcomes-section > p,
+.homerst-page .reflection-section > p{
+  max-width: min(820px, var(--content-rail));
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Mockup/Prototype 섹션의 소개 텍스트 컨테이너도 중앙 레일로 */
+.homerst-page .mockup-section .overview-text-container,
+.homerst-page .prototype-section .overview-text-container{
+  max-width: min(820px, var(--content-rail));
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: left;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width:1024px){
+  .homerst-page .solution-section .solution-image-row img{
+    width: clamp(260px, 42vw, 360px);
+    height: clamp(200px, 30vw, 260px);
+  }
+  .homerst-page #problem .problem-image img{
+    width: clamp(320px, 46vw, 520px);
+    height: auto;
+  }
+}
+@media (max-width:768px){
+  .mockup-image.large{ width: 92vw; }
+  .mockup-image.mobile.large{ width: 50vw; max-width: 320px; }
+  .prototype-video{ width: 96vw; }
+  .homerst-page #problem .problem-image img{ width: 96vw; }
+}

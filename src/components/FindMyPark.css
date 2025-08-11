@@ -1,0 +1,57 @@
+/* FindMyPark.css — page-scoped tweaks */
+.project-detail-wrapper { width:100%; background:#fff; overflow-x:hidden; }
+
+/* === Research: 세로 스택, 크게 중앙 === */
+.findmypark-page .research-stack{
+  max-width: min(1300px, 96vw);
+  margin: var(--space-3) auto 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: clamp(20px, 3vw, 40px);
+}
+.findmypark-page .research-figure{ display:flex; justify-content:center; align-items:flex-start; }
+.findmypark-page .research-figure img{
+  width: 100%; max-width: 1200px; height: auto; display:block; border-radius:12px;
+}
+.findmypark-page .research-figure--journey img{ max-width: 1400px; }
+
+/* === Solution: 두 줄 레이아웃(3 + 3), 동일 크기, 중앙 정렬 === */
+.findmypark-page .solution-rows{
+  max-width: min(1400px, 95vw);
+  margin: var(--space-2) auto 0;
+  display: flex; flex-direction: column;
+  gap: clamp(16px, 2vw, 28px);
+}
+.findmypark-page .solution-row{
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  gap: clamp(16px, 2vw, 28px);
+  flex-wrap: wrap; /* 작은 화면에서 자동 줄바꿈 */
+}
+.findmypark-page .solution-row img{
+  width: clamp(300px, 28vw, 420px);     /* 동일 너비 */
+  height: clamp(220px, 22vw, 300px);    /* 동일 높이 */
+  object-fit: cover;                     /* 비율 다른 이미지도 크기 통일 */
+  border-radius: 12px;
+  display:block;
+}
+
+/* Wireframes: 중앙 크게 */
+.findmypark-page .wireframe-section .wireframe-grid{
+  display:flex; justify-content:center; align-items:center; gap:0;
+}
+.findmypark-page .wireframe-section .wireframe-grid img{
+  width:100%; max-width: min(1200px, 92vw); height:auto; border-radius:12px;
+}
+
+/* Responsive */
+@media (max-width:1024px){
+  .findmypark-page .solution-row img{ width: clamp(260px, 42vw, 360px); height: clamp(200px, 30vw, 260px); }
+  .findmypark-page .research-figure img,
+  .findmypark-page .research-figure--journey img{ max-width: 96vw; }
+}
+@media (max-width:768px){
+  .findmypark-page .solution-row img{ width: 94vw; height: auto; } /* 모바일에선 한 줄씩 크게 */
+  .findmypark-page .wireframe-section .wireframe-grid img{ max-width: 96vw; }
+}

@@ -1,0 +1,41 @@
+.flight-path {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+
+  margin-top: 1.25rem;
+  width: 100%;
+}
+
+.path-line {
+  flex: 1;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    #ccc,
+    #ccc 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  position: relative;
+  overflow: visible;
+}
+
+/* 🔸 비행기 크기 업 */
+.plane {
+  position: absolute;
+  top: -18px;        /* 크기 키운 만큼 살짝 위로 */
+  left: 0;
+  font-size: 22px;   /* ⬅ 기존 지정없음 → 22px */
+  line-height: 1;
+  animation: movePlane 6s linear infinite;
+}
+@keyframes movePlane {
+  0% { left: 0; }
+  100% { left: 95%; }
+}
+
+.dot { font-size: 1rem; font-weight: bold; }
+.start { color: #ff7ec7; }
+.end { color: #555; }

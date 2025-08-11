@@ -1,0 +1,169 @@
+/* PowerPause.css — Composite hero + unified section rhythm */
+
+/* ============== Tokens ============== */
+:root{
+  --page-pad-x: clamp(16px, 5vw, 64px);
+  --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem;
+  --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
+  --nav-h: 72px;
+  --content-rail: 1100px; /* center rail width for inner content */
+}
+
+/* ============== Global Sections ============== */
+/* section-block: 모든 본문 섹션에서 동일한 시작 높이/패딩을 보장 */
+.section-block{
+  padding: var(--space-12) var(--page-pad-x);
+  display:flex; flex-direction:column; align-items:flex-start; gap: var(--space-3);
+}
+
+/* 각 섹션 내부의 '직계' 요소는 동일한 중앙 레일에 정렬 */
+.section-block > p,
+.section-block > ul,
+.section-block > ol,
+.section-block > .split,
+.section-block > .problem-image,
+.section-block > .research-image-row,
+.section-block > .solution-image-row,
+.section-block > .wireframe-grid{
+  max-width: var(--content-rail);
+  width:100%;
+  margin-left:auto; margin-right:auto;
+}
+
+/* 본문 폭은 레일 안에서 조금 더 좁게 */
+.section-block > p{ max-width: min(820px, var(--content-rail)); }
+
+/* 타이포 */
+.section-block h4{
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 1.2rem + 2.7vw, 2.6rem);
+  color:#000;
+  margin: 0 0 1rem 0; /* 모든 섹션에서 동일 */
+}
+.section-block p,
+.section-block li{
+  font-size: clamp(1.06rem, .98rem + .5vw, 1.24rem);
+  line-height: 1.9;
+  color:#333;
+}
+
+/* 첫 문단(=문단 시작점) 높이 통일: h4 바로 다음 요소 상단 여백 고정 */
+.section-block h4 + *{ margin-top: .25rem; }  /* 섬세한 간격 */
+.callout{
+  font-size: clamp(1.25rem, 1.05rem + .9vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.45;
+  max-width: min(880px, var(--content-rail));
+  margin-left:auto; margin-right:auto;
+}
+
+/* Split layout */
+.split{ display:flex; gap: clamp(16px, 2.5vw, 32px); align-items:flex-start; margin-top: var(--space-3); }
+.col{ flex:1 1 0; min-width: 280px; }
+.eyebrow{ text-transform: uppercase; letter-spacing: .04em; font-weight:800; font-size:.9rem; color:#111; }
+
+/* Lists */
+.section-block ul{ padding-left: 1.1rem; }
+.section-block li{ margin: .35rem 0; }
+
+/* ============== HERO (composite PNG) ============== */
+.meta-section{ position:relative; width:100%; overflow:visible; }
+.powerpause-page .meta-section.meta--composite{
+  margin-top: clamp(80px, 12vh, 160px); /* sticky nav 아래로 안전하게 */
+}
+.meta--composite .bg-image{ width:100%; display:block; }
+
+/* (남아있는 경우) 메타 오버레이 비활성화 */
+.meta-overlay{ position:absolute; top:12%; left:5%; right:50%; display:none; }
+
+/* ============== Images ============== */
+.problem-image{
+  display:flex; justify-content:center; align-items:center;
+  gap: var(--space-2); margin-top: var(--space-2);
+}
+.problem-image img{
+  width: clamp(380px, 40vw, 520px);
+  height: clamp(240px, 26vw, 320px);
+  object-fit: cover; border-radius: 8px;
+}
+
+.research-image-row{ display:flex; flex-wrap:wrap; gap: var(--space-2); margin-top: var(--space-2); }
+.research-image-row > *{ flex:1 1 320px; max-width: 520px; }
+.research-image-row img{ width:100%; height:auto; max-height:400px; object-fit:contain; border-radius:8px; }
+
+.solution-image-row{
+  max-width: min(1600px, 95vw);
+  width:100%;
+  margin: var(--space-2) auto 0;
+  display:flex;
+  gap: clamp(16px, 2vw, 28px);
+  justify-content: center;   /* ← flex-start 에서 center로 변경 */
+  align-items:flex-start;
+  padding-left: 0;           /* ← 8% 제거 */
+  flex-wrap: nowrap;
+}
+
+.solution-image-row img{
+  width: clamp(320px, 26vw, 460px); height:auto; object-fit:contain; border-radius:8px;
+}
+
+.wireframe-grid{ display:grid; gap:.1rem; justify-items:center; grid-template-columns:repeat(4,1fr); }
+.wireframe-grid img{ width:100%; height:auto; object-fit:contain; border-radius:12px; }
+
+/* ============== Outcomes & Reflection ============== */
+.outcomes-section, .outcome-section, .reflection-section{ /* outcome-section 구버전 호환 */
+  padding: var(--space-12) var(--page-pad-x);
+}
+.outcomes-section h4, .outcome-section h4, .reflection-section h4{ /* 동일 타이포 */
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(1.8rem, 1.2rem + 2.7vw, 2.6rem);
+  margin: 0 0 1rem 0;
+}
+.outcomes-section > *, .outcome-section > *, .reflection-section > *{
+  max-width: var(--content-rail); width:100%; margin-left:auto; margin-right:auto;
+}
+
+/* ============== Responsive ============== */
+@media (max-width:1200px){
+  .solution-image-row{ flex-wrap: wrap; padding-left: 0; }
+  .solution-image-row img{ width: clamp(260px, 40vw, 360px); }
+}
+@media (max-width:1024px){
+  :root{ --content-rail: 960px; }
+  .wireframe-grid{ grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width:768px){
+  :root{ --content-rail: 92vw; }
+  /* === Global smooth scroll + anchor offset === */
+html { scroll-behavior: smooth; }
+
+/* 고정 헤더/네브 높이만큼 앵커 여백 확보 (모든 섹션 공통) */
+.meta-section,
+.section-block {
+  scroll-margin-top: calc(var(--nav-h, 72px) + 24px);
+}
+
+/* 페이지 하단 여유 — 푸터까지 자연스럽게 닿도록 */
+.project-detail-wrapper { 
+  padding-bottom: clamp(60px, 10vh, 140px);
+}
+
+  .wireframe-grid{ grid-template-columns: 1fr; }
+}
+
+/* ====== Global smooth scroll + anchor offset ====== */
+:root{
+  --nav-h: 72px; /* 상단 고정 네비 높이(사이트 기준값). 다르면 여기만 바꿔도 됨 */
+}
+html{ scroll-behavior: smooth; }
+
+/* 모든 섹션: 고정 헤더만큼 여유 주기 (anchor/scrollIntoView 정확 정렬) */
+.meta-section,
+.section-block{
+  scroll-margin-top: calc(var(--nav-h) + 24px);
+}
+
+/* 페이지 하단 여백을 넉넉히 줘서 footer까지 스크롤 가능 */
+.project-detail-wrapper{
+  padding-bottom: 160px; /* 필요하면 120~200px 사이에서 조절 */
+}
