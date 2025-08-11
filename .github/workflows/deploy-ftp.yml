@@ -1,11 +1,11 @@
-name: Deploy to Namecheap via FTP
+name: Deploy via FTP
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
 
 jobs:
-  web-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,10 +16,12 @@ jobs:
       - run: npm ci || npm install
       - run: npm run build
       - name: Upload via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@v4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/
+          protocol: ftps
           server-dir: public_html/
+          local-dir: dist/
+          dangerous-clean-slate: true
