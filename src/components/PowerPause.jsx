@@ -9,11 +9,11 @@ import problemImg from '../assets/bc/problem1.png';
 import problemImg2 from '../assets/bc/problem2.png';
 import research1 from '../assets/bc/research1.png';
 import persona from '../assets/bc/persona.png';
-import solution2 from '../assets/bc/mockup2.png';
-import solution3 from '../assets/bc/mockup3.png';
-import solution4 from '../assets/bc/mockup4.png';
 import wireframe1 from '../assets/bc/wireframe1.png';
 import wireframe2 from '../assets/bc/wireframe2.png';
+import wireframe3 from '../assets/bc/wireframe3.png';
+import wireframe4 from '../assets/bc/wireframe4.png';
+import wireframe5 from '../assets/bc/hifi.png';
 
 const sectionsForNav = [
   { id: 'overview',   label: 'Overview' },
@@ -26,7 +26,6 @@ const sectionsForNav = [
 ];
 
 const PowerPause = ({ prevId, nextId }) => {
-  // useEffect(() => { window.scrollTo({ top: 0, behavior: 'auto' }); }, []);
 
   return (
     <div className="project-detail-wrapper powerpause-page has-side-right">
@@ -170,12 +169,6 @@ const PowerPause = ({ prevId, nextId }) => {
                 </ul>
               </div>
             </div>
-
-            <div className="solution-image-row">
-              <img src={solution2} alt="Usage and goals" />
-              <img src={solution3} alt="Remote control and smart tips" />
-              <img src={solution4} alt="Rewards and donation flow" />
-            </div>
           </section>
 
           {/* ===== WIREFRAMES ===== */}
@@ -186,17 +179,21 @@ const PowerPause = ({ prevId, nextId }) => {
               and the donation that follows confirmed savings.
             </p>
             <ol>
-              <li><strong>Alert → Quick Fix:</strong> “Light left on” → Turn Off → success state.</li>
-              <li><strong>Home Control:</strong> device overview → scene trigger → confirmation.</li>
-              <li><strong>Travel Mode:</strong> duration, auto rules, emergency contact.</li>
-              <li><strong>Donate:</strong> convert points → choose cause → receipt.</li>
+              <li><strong>Simple → Quick Sign Up:</strong> “Using Gmail” → Sign In → Start Control.</li>
+              <li><strong>Home Control:</strong> Device overview → Scene trigger → Confirmation.</li>
+              <li><strong>Saving Mode:</strong> Weekly savings, Get rewards, Share rewards.</li>
+              <li><strong>Donate:</strong> Convert points → Choose cause → Receipt.</li>
             </ol>
 
             <div className="wireframe-grid">
               <img src={wireframe1} alt="Wireframe: alert to quick action" />
-              <img src={wireframe2} alt="Wireframe: device control and donation" />
-              <img src={wireframe1} alt="Wireframe: travel mode" />
-              <img src={wireframe2} alt="Wireframe: progress and points" />
+              <img src={wireframe3} alt="Wireframe: savings and rewards" />
+              <img src={wireframe2} alt="Wireframe: device control" />
+              <img src={wireframe4} alt="Wireframe: pay and donate" />
+            </div>
+
+              <div className="hi-fi-wireframe-grid">
+              <img src={wireframe5} alt="Usage and goals" />
             </div>
           </section>
 
