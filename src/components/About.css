@@ -11,8 +11,8 @@
   background-color: #ffffff;
   color: #969696;
 
-  /* 네비 고려한 상단 여백 */
-  padding: calc(var(--nav-h) + 40px) 2rem 16px;
+  /* ⬇️ 상단 여백을 살짝 줄여 스크롤 영역을 위로 올림 */
+  padding: calc(var(--nav-h) + 24px) 2rem 16px; /* was +40px */
 
   /* ✅ 뷰포트 고정 + 푸터 공간 확보 */
   height: calc(100dvh - var(--footer-h));
@@ -22,7 +22,9 @@
   flex-direction: column;           /* 사진 위, 글 아래 */
   justify-content: flex-start;
   align-items: center;
-  gap: 2.5rem;
+
+  /* ⬇️ 상단/하단 블록 사이 간격을 줄여 본문 스크롤 높이 확보 */
+  gap: 1.5rem; /* was 2.5rem */
 
   width: 100%;
   position: relative;               /* 배경 데코 배치용 */
