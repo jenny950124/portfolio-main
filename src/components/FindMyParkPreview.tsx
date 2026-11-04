@@ -1,6 +1,6 @@
 import readingLawn from '../assets/find-my-park-reading-lawn.jpg'
-import discoveryScreen from '../assets/find-my-park-main-mockup.png'
-import recommendationScreen from '../assets/find-my-park-detail-mockup.png'
+import discoveryScreen from '../assets/find-my-park-main-mockup.webp'
+import recommendationScreen from '../assets/find-my-park-detail-mockup.webp'
 import './find-my-park-preview.css'
 
 export function FindMyParkPreview() {

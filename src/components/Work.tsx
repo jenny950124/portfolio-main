@@ -1,9 +1,9 @@
 import { useState, type CSSProperties } from 'react'
 import { ArrowUpRight, Plus, Sun, Moon } from 'lucide-react'
 import type { PortfolioCopy } from '../data/copy'
-import cafeThumbnail from '../assets/aperture-thumbnail.png'
-import condoThumbnail from '../assets/condobooking_process.png'
-import rewardrobeThumbnail from '../assets/worn-forward-runner-landscape.png'
+import cafeThumbnail from '../assets/aperture-thumbnail.webp'
+import condoThumbnail from '../assets/condobooking_process.webp'
+import rewardrobeThumbnail from '../assets/worn-forward-runner-landscape.webp'
 import { FindMyParkPreview } from './FindMyParkPreview'
 import './work-accordion.css'
 type WorkProps = {
@@ -58,7 +58,7 @@ export function Work({
       open: onOpenCondo,
     },
     {
-      id: 'rewardrobe', number: '05', title: 'WORN FORWARD',
+      id: 'rewardrobe', number: '05', title: 'RE:WARDROBE',
       category: korean ? '프로덕트 콘셉트' : 'Product concept',
       description: korean
         ? '소유한 옷을 새롭게 스타일링하고, 새로운 아이템을 미리 보고, 완성된 코디를 저장하고 공유하는 아웃도어 옷장 경험입니다.'

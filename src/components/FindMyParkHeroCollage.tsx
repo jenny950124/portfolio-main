@@ -2,8 +2,8 @@ import { useLayoutEffect, useRef } from 'react'
 import resting from '../assets/find-my-park-resting.jpg'
 import dogWalk from '../assets/find-my-park-dog-walk.jpg'
 import reading from '../assets/find-my-park-reading-lawn.jpg'
-import discovery from '../assets/find-my-park-main-mockup.png'
-import recommendation from '../assets/find-my-park-detail-mockup.png'
+import discovery from '../assets/find-my-park-main-mockup.webp'
+import recommendation from '../assets/find-my-park-detail-mockup.webp'
 import './find-my-park-hero-collage.css'
 
 export function FindMyParkHeroCollage() {

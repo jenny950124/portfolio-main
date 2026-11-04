@@ -35,9 +35,9 @@ import {
   Zap,
 } from 'lucide-react'
 
-import cafeThumbnail from '../assets/cafe_thumbnail.png'
+import cafeThumbnail from '../assets/cafe_thumbnail.webp'
 import { FindMyParkHeroCollage } from './FindMyParkHeroCollage'
-import findMyParkMain from '../assets/find-my-park-main-mockup.png'
+import findMyParkMain from '../assets/find-my-park-main-mockup.webp'
 import findMyParkReading from '../assets/find-my-park-waterfront-reading.jpg'
 import {
   CaseStudyControls,

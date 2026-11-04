@@ -15,7 +15,7 @@ import {
   Users,
 } from 'lucide-react'
 
-import condoBookingProcess from '../assets/condobooking_process.png'
+import condoBookingProcess from '../assets/condobooking_process.webp'
 import {
   CaseStudyControls,
   CaseStudyFooter,

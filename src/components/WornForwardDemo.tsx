@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { ArrowLeft, ArrowRight, Bookmark, Check, CloudRain, Shirt, Sparkles } from 'lucide-react'
-import trail from '../assets/worn-forward-front-trail.png'
-import forest from '../assets/worn-forward-front-forest.png'
-import weekend from '../assets/worn-forward-front-hike-v2.png'
+import trail from '../assets/worn-forward-front-trail.webp'
+import forest from '../assets/worn-forward-front-forest.webp'
+import weekend from '../assets/worn-forward-front-hike-v2.webp'
 
 export const trailLooks = [
   { image: trail, title: 'Trail essentials', detail: 'White performance top · Hydration vest · Trail shorts', note: 'Lightweight layers and a hydration vest keep essentials close on faster trails.' },
