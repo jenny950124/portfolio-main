@@ -1,9 +1,9 @@
 import { useState, type CSSProperties } from 'react'
 import { ArrowUpRight, Plus, Sun, Moon } from 'lucide-react'
 import type { PortfolioCopy } from '../data/copy'
-import cafeThumbnail from '../assets/aperture-thumbnail.webp'
-import condoThumbnail from '../assets/condobooking_process.webp'
-import rewardrobeThumbnail from '../assets/worn-forward-runner-landscape.webp'
+import cafeThumbnail from '../assets/aperture-thumbnail.png'
+import condoThumbnail from '../assets/condobooking_process.png'
+import rewardrobeThumbnail from '../assets/worn-forward-runner-landscape.png'
 import { FindMyParkPreview } from './FindMyParkPreview'
 import './work-accordion.css'
 type WorkProps = {

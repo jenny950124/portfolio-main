@@ -1,6 +1,6 @@
 import type { PortfolioCopy } from '../data/copy'
 import { designStory } from '../data/designStory'
-import portrait from '../assets/about/jenny-professional-portrait.webp'
+import portrait from '../assets/about/jenny-professional-portrait.jpg'
 import './design-story.css'
 
 export function Process({ t }: { t: PortfolioCopy }) {

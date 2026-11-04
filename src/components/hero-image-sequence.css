@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-  min-height: min(640px, 72svh);
+  min-height: min(820px, 90svh);
   gap: 0;
 }
 .hero.hero-with-sequence .hero-copy {
@@ -24,7 +24,7 @@
 .hero-falling-gallery { position: absolute; inset: 0; z-index: 0; margin: 0; pointer-events: none; }
 .hero-falling-canvas { display: block; width: 100%; height: 100%; }
 @media (max-width: 760px) {
-  .hero.hero-introduction.hero-with-sequence { min-height: 560px; min-height: max(480px, 68svh); }
+  .hero.hero-introduction.hero-with-sequence { min-height: 650px; min-height: 80svh; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-falling-gallery { display: none; }

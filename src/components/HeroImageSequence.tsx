@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react'
-import chrome from '../assets/hero-editorial-chrome.webp'
-import vinyl from '../assets/hero-editorial-vinyl-pink.webp'
-import mug from '../assets/hero-editorial-mug.webp'
-import jazz from '../assets/hero-editorial-jazz.webp'
-import gorp from '../assets/hero-editorial-gorp-v3.webp'
-import energy from '../assets/hero-editorial-energy-lime.webp'
-import holdGreen from '../assets/hero-editorial-hold-green.webp'
-import holdRed from '../assets/hero-editorial-hold-red.webp'
-import holdBlue from '../assets/hero-editorial-hold-blue.webp'
+import chrome from '../assets/hero-editorial-chrome.png'
+import vinyl from '../assets/hero-editorial-vinyl-pink.png'
+import mug from '../assets/hero-editorial-mug.png'
+import jazz from '../assets/hero-editorial-jazz.png'
+import gorp from '../assets/hero-editorial-gorp-v3.png'
+import energy from '../assets/hero-editorial-energy-lime.png'
+import holdGreen from '../assets/hero-editorial-hold-green.png'
+import holdRed from '../assets/hero-editorial-hold-red.png'
+import holdBlue from '../assets/hero-editorial-hold-blue.png'
 
 // Transparent 3D editorial objects inspired by the supplied references.
 const photographs = [chrome, mug, jazz, vinyl, holdGreen, gorp, energy, holdRed, holdBlue]
