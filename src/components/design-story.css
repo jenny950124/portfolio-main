@@ -1,0 +1,34 @@
+.design-story { --story-muted: #bac0b5; --story-line: #495047; }
+.design-story .process-intro { align-items: start; }
+.design-story .process-intro h2 { max-width: 850px; margin: 0; font-size: clamp(36px, 4.5vw, 64px); line-height: 1.08; letter-spacing: -.045em; }
+.design-story .process-intro .eyebrow { opacity: 1; color: var(--story-muted); }
+.design-story-chapter, .design-story-principles { display: grid; grid-template-columns: 1fr 2.3fr; gap: 32px; margin-top: 76px; }
+.design-story-label { margin: 0; font-size: 13px; font-weight: 500; line-height: 1.6; color: var(--story-muted); }
+.design-story-prose { max-width: 740px; }
+.design-story-profile { align-self: start; }
+.design-story-portrait { display: block; width: 100%; max-width: 280px; height: auto; margin-top: 24px; }
+.design-story-prose p { margin: 0 0 22px; font-size: clamp(16px, 1.25vw, 18px); line-height: 1.8; color: var(--story-muted); }
+.design-story-prose p:last-child { margin-bottom: 0; }
+.design-principle-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.design-principle-grid article { border-top: 1px solid var(--story-line); padding-top: 20px; }
+.design-principle-number { font: 11px ui-monospace, monospace; color: #efb98b; }
+.design-principle-grid h4 { margin: 24px 0 16px; font-size: 23px; line-height: 1.2; letter-spacing: -.03em; }
+.design-principle-grid p { margin: 0; font-size: 15px; line-height: 1.75; color: var(--story-muted); }
+.design-story-ai .design-story-prose { border-top: 1px solid var(--story-line); padding-top: 30px; }
+.design-story-ai h4 { font-size: clamp(27px, 3vw, 40px); line-height: 1.15; letter-spacing: -.035em; margin: 0 0 28px; }
+.design-story-prose .design-story-closing { color: inherit; font-size: clamp(19px, 1.8vw, 25px); line-height: 1.55; margin-top: 32px; }
+@media (max-width: 1050px) {
+ .design-principle-grid { grid-template-columns: 1fr; gap: 30px; }
+ .design-principle-grid h4 { margin-top: 16px; }
+}
+@media (max-width: 760px) {
+ .design-story-portrait { max-width: 220px; }
+ .design-story .process-intro, .design-story-chapter, .design-story-principles { grid-template-columns: 1fr; gap: 24px; }
+ .design-story-chapter, .design-story-principles { margin-top: 48px; }
+}
+
+/* Share the heading row height so each principle's paragraph starts together. */
+@media (min-width: 1051px) {
+ .design-principle-grid { grid-template-rows: auto auto 1fr; row-gap: 0; }
+ .design-principle-grid article { display: grid; grid-row: span 3; grid-template-rows: subgrid; }
+}

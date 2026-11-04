@@ -1,0 +1,198 @@
+/* Project 04: the booking flow sits in the shared space it helps people use. */
+.project-card.project-card-condo-flow {
+  isolation: isolate;
+  background: #171518;
+  color: #fff8fa;
+}
+
+.condo-thumbnail-photo,
+.rewardrobe-thumbnail-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card-condo-flow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(17, 14, 18, 0.88), rgba(17, 14, 18, 0.6) 43%, rgba(17, 14, 18, 0.12) 78%);
+  pointer-events: none;
+}
+
+.project-card-condo-flow .card-kicker,
+.project-card-condo-flow .condo-project-description,
+.project-card-condo-flow .condo-project-tags {
+  color: rgba(255, 248, 250, 0.85);
+}
+
+.project-card-condo-flow .condo-project-line {
+  background: #f2a6cb;
+}
+
+.project-card-condo-flow .condo-flow-preview {
+  z-index: 2;
+}
+
+.project-card-condo-flow .condo-mini-step {
+  opacity: 1;
+}
+
+.project-card-condo-flow :is(.condo-mini-hero, .condo-mini-rooftop) {
+  background: linear-gradient(rgba(17, 14, 18, 0.35), rgba(17, 14, 18, 0.3)), url('./assets/condo-connect-thumbnail-v3.jpg') center / cover;
+  color: #ffffff;
+}
+
+.project-card.project-card-condo-flow :is(.condo-mini-active, .condo-mini-date-active, .condo-mini-time-active, .condo-mini-check) {
+  background: #f2a6cb;
+  color: #111012;
+}
+
+.project-card-condo-flow .condo-mini-label {
+  color: #fff8fa;
+}
+
+.project-card-condo-flow .condo-flow-progress i {
+  background: rgba(242, 166, 203, 0.55);
+}
+
+.project-card-condo-flow:hover .condo-flow-progress i {
+  background: #f2a6cb;
+}
+
+/* Project 05: an owned wardrobe behind two real styling/lookbook previews. */
+.project-card.rewardrobe-project-card {
+  padding: 0;
+  border: 0;
+  grid-template-rows: 1fr;
+}
+
+.rewardrobe-project-card .rewardrobe-project-copy h3 {
+  font-size: clamp(42px, 4vw, 64px);
+}
+
+.rewardrobe-project-card .rewardrobe-thumbnail {
+  background: #e8e4da;
+}
+
+.rewardrobe-project-card .rewardrobe-thumbnail::before {
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(23, 31, 24, 0.08), transparent 60%, rgba(23, 31, 24, 0.1));
+  pointer-events: none;
+}
+
+.rewardrobe-project-card .rewardrobe-thumb-phone {
+  width: 236px;
+  height: 478px;
+}
+
+.rewardrobe-project-card .rewardrobe-thumb-phone-main {
+  left: 9%;
+}
+
+.rewardrobe-project-card .rewardrobe-thumb-phone-secondary {
+  right: 6%;
+}
+
+.rewardrobe-project-card .rewardrobe-floating-item {
+  width: 96px;
+  min-height: 84px;
+  padding: 14px;
+  border-radius: 16px;
+}
+
+.rewardrobe-project-card .rewardrobe-floating-item-one {
+  left: 2%;
+  top: 65%;
+}
+
+.rewardrobe-project-card .rewardrobe-floating-item-two {
+  right: 2%;
+  bottom: 8%;
+}
+
+.rewardrobe-project-card .rewardrobe-thumb-flatlay {
+  height: 220px;
+  min-height: 0;
+  padding: 0;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  background: #171c18;
+}
+
+.rewardrobe-project-card .rewardrobe-thumb-flatlay img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rewardrobe-project-card .rewardrobe-thumb-look {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.rewardrobe-project-card .rewardrobe-thumb-look > span {
+  width: auto;
+  margin-right: 0;
+}
+
+.rewardrobe-project-card .rewardrobe-thumb-look :is(p, small) {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .project-card.rewardrobe-project-card {
+    grid-template-rows: auto auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .project-card-condo-flow .condo-mini-screen-confirm {
+    padding-inline: 4px;
+  }
+
+  .project-card-condo-flow .condo-mini-confirm-title {
+    font-size: 7px;
+  }
+
+  .project-card-condo-flow .condo-mini-content {
+    padding-inline: 4px;
+  }
+
+  .project-card-condo-flow .condo-mini-hero {
+    padding-inline: 4px;
+  }
+
+  .project-card-condo-flow .condo-mini-hero strong {
+    font-size: 7px;
+  }
+
+  .project-card-condo-flow .condo-mini-amenities {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .project-card-condo-flow .condo-mini-amenities span {
+    min-height: 22px;
+    padding: 3px;
+  }
+
+  .rewardrobe-project-card .rewardrobe-thumb-phone {
+    width: 220px;
+    height: 448px;
+  }
+
+  .rewardrobe-project-card .rewardrobe-thumb-phone-main {
+    inset-inline: 0;
+    margin-inline: auto;
+  }
+
+  .rewardrobe-project-card .rewardrobe-thumb-phone-secondary {
+    display: none;
+  }
+}

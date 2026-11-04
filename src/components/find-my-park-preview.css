@@ -1,0 +1,140 @@
+/* Centered product composition, shared with the case-study hero. */
+.fmp-editorial-preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  isolation: isolate;
+  background: #18382b;
+  color: #fffdf5;
+  font-family: Manrope, 'Pretendard Variable', Pretendard, sans-serif;
+  line-height: 1.5;
+}
+.fmp-editorial-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 70%;
+  z-index: -2;
+}
+.fmp-editorial-preview::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(#07180c99, #07180c33 35%, #07180c44 75%, #07180c99);
+}
+.fmp-preview-heading {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
+}
+.fmp-preview-heading > span {
+  color: #e0efc9;
+  font-size: clamp(8px, .8vw, 11px);
+  letter-spacing: .1em;
+}
+.fmp-preview-heading > strong {
+  font-size: clamp(18px, 1.8vw, 28px);
+  font-weight: 500;
+  letter-spacing: -.04em;
+  line-height: 1.15;
+}
+.fmp-editorial-screens {
+  position: absolute;
+  top: 17%;
+  bottom: 8%;
+  left: 10%;
+  right: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.fmp-editorial-screens > img,
+.work-entry-visual-find-my-park .fmp-editorial-screens > img {
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  height: 124%;
+  max-height: none;
+  max-width: none;
+  object-fit: contain;
+  transform: translateY(0);
+  transition: transform 650ms ease;
+}
+.fmp-editorial-screens > img:last-child,
+.work-entry-visual-find-my-park .fmp-editorial-screens > img:last-child {
+  margin-left: -7%;
+  transform: translateY(2%);
+}
+.fmp-preview-flow {
+  position: absolute;
+  bottom: 4%;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  font-size: clamp(10px, .9vw, 13px);
+  color: #e0efc9;
+}
+.fmp-preview-flow i { height: 1px; width: 30px; background: #e0efc966; }
+.fmp-case .fmp-hero-visual.fmp-hero-shared-preview {
+  min-height: 0;
+  aspect-ratio: auto;
+  border-radius: 0;
+}
+.fmp-hero-shared-preview::after { display: none; }
+
+/* The case-study preview needs its own title clearance at its narrower width. */
+.fmp-hero-shared-preview .fmp-editorial-preview {
+  aspect-ratio: 4 / 3;
+}
+.fmp-hero-shared-preview .fmp-preview-heading {
+  top: 5%;
+  z-index: 2;
+}
+.fmp-hero-shared-preview .fmp-preview-heading > strong {
+  font-size: clamp(18px, 1.65vw, 25px);
+}
+.fmp-hero-shared-preview .fmp-editorial-screens {
+  top: 30%;
+  bottom: 6%;
+}
+
+.work-entry-visual-find-my-park .fmp-editorial-preview { height: 100%; }
+.work-entry-visual-find-my-park .fmp-editorial-photo { transform: none; }
+.work-entry-visual-find-my-park:hover .fmp-editorial-screens > img:first-child { transform: translateY(-4px); }
+.work-entry-visual-find-my-park:hover .fmp-editorial-screens > img:last-child { transform: translateY(calc(2% - 4px)); }
+
+/* Reveal both phones together after the photograph has had a moment on screen. */
+.work-entry[data-expanded='false'] .work-entry-visual-find-my-park .fmp-editorial-screens {
+  opacity: 0;
+  transform: translateY(18px);
+}
+.work-entry[data-expanded='true'] .work-entry-visual-find-my-park .fmp-editorial-screens {
+  animation: fmp-phone-reveal 1400ms cubic-bezier(.4, 0, .2, 1) 1200ms both;
+}
+@keyframes fmp-phone-reveal {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-entry[data-expanded] .work-entry-visual-find-my-park .fmp-editorial-screens {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .work-entry-visual-find-my-park .fmp-editorial-screens > img { transition: none; }
+  .work-entry-visual-find-my-park:hover .fmp-editorial-screens > img:first-child { transform: translateY(0); }
+  .work-entry-visual-find-my-park:hover .fmp-editorial-screens > img:last-child { transform: translateY(2%); }
+}

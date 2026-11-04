@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 440">
+  <title>Jenny Kim</title>
+  <style>
+    svg { color: #11110f; }
+    @media (prefers-color-scheme: dark) { svg { color: #f1f2e9; } }
+  </style>
+  <circle cx="260" cy="220" r="170" fill="none" stroke="currentColor" stroke-width="7" opacity=".3"/>
+  <ellipse cx="260" cy="220" rx="240" ry="62" fill="none" stroke="currentColor" stroke-width="8" transform="rotate(-16 260 220)"/>
+  <text x="260" y="275" text-anchor="middle" fill="currentColor" font-family="Georgia, 'Times New Roman', serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-16">JK</text>
+</svg>

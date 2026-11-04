@@ -1,0 +1,44 @@
+/* Project photographs tumble across the hero, underneath its introduction. */
+.hero.hero-introduction.hero-with-sequence {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  min-height: min(820px, 90svh);
+  gap: 0;
+}
+.hero.hero-with-sequence .hero-copy {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  max-width: 760px;
+  justify-self: center;
+  margin: 0;
+  text-shadow: 0 0 8px var(--bg, #fafaf7), 0 0 20px var(--bg, #fafaf7), 0 0 32px var(--bg, #fafaf7);
+}
+.hero-with-sequence h1 { font-size: clamp(44px, 5vw, 76px); }
+.hero-falling-gallery { position: absolute; inset: 0; z-index: 0; margin: 0; pointer-events: none; }
+.hero-falling-canvas { display: block; width: 100%; height: 100%; }
+@media (max-width: 760px) {
+  .hero.hero-introduction.hero-with-sequence { min-height: 650px; min-height: 80svh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-falling-gallery { display: none; }
+}
+
+.hero-cursor-hint {
+  position: absolute; top: 0; left: 0; z-index: 2;
+  pointer-events: none; user-select: none; white-space: nowrap;
+  padding: 8px 12px; border-radius: 999px;
+  background: var(--text); color: var(--bg);
+  font-size: 11px; font-weight: 500; letter-spacing: .02em;
+  opacity: 0; transition: opacity 250ms ease;
+}
+.hero-cursor-hint[data-visible='true'] { opacity: 1; }
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .hero-cursor-hint { display: none; }
+}

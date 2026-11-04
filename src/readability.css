@@ -1,0 +1,150 @@
+/* Fixed-colour project artwork owns its text palette in either site theme. */
+.condo-case { --pc-accent: #96365f; }
+.condo-case .pc-kicker,
+.condo-case .pc-section-label { color: var(--pc-accent); }
+.dark .condo-case { --pc-accent: #f2a6cb; }
+.condo-case .condo-service-map,
+.condo-case .condo-validation-list article {
+  --pc-muted: #bcb5ba;
+  color: #f8f5f7;
+}
+.condo-case .condo-amenity-panel,
+.condo-case .condo-booking-panel { --pc-muted: #bcb5ba; }
+.condo-case .condo-feature-discover .pc-feature-copy > p:not(.pc-section-label) { color: #bcb5ba; }
+.condo-case .condo-support-row span { color: #4c3541; }
+.condo-case .condo-need-grid article:not(:first-child) > span { color: #bcb5ba; }
+.condo-case .condo-needs .pc-section-label,
+.condo-case .condo-feature-discover .pc-section-label,
+.condo-case .condo-feature-confirm .pc-section-label,
+.condo-case .condo-reflection .pc-section-label { color: #f2a6cb; }
+.condo-case .condo-life .pc-section-label,
+.condo-case .condo-motion .pc-section-label,
+.condo-case .condo-flow-feature .pc-section-label,
+.condo-case .condo-feature-book .pc-section-label,
+.condo-case .condo-outcome .pc-section-label,
+.condo-case .condo-outcome .pc-heading-body p,
+.condo-case .condo-life-footer span { color: #51303f; }
+/* Emphasize the active timeline item without fading readable copy. */
+.condo-case .condo-life-timeline li { opacity: 1; animation: none; }
+
+.project-case .fmp-confidence-panel,
+.project-case .power-alert-card:not(.urgent),
+.project-case .aperture-performer-flow { color: #11110f; }
+.project-case .fmp-route-marker small { color: #52594f; }
+.project-case .fmp-reflection .pc-section-label,
+.project-case .fmp-reflection .pc-reflection-grid > p:last-child { color: #355339; }
+.project-case .power-reflection .pc-section-label,
+.project-case .power-reflection .pc-reflection-grid > p:last-child { color: #344226; }
+.project-case .aperture-reflection .pc-section-label,
+.project-case .aperture-reflection .pc-reflection-grid > p:last-child { color: #422c1b; }
+
+.power-case { --pc-accent: #456b28; }
+.dark .power-case { --pc-accent: #a9d77c; }
+.project-case .power-principle-grid span { color: #456b28; }
+.dark .project-case .power-principle-grid span { color: #a9d77c; }
+.project-case .power-overview-connected,
+.project-case .power-overview-scenes .active,
+.project-case .power-panel-header .power-home-score,
+.project-case .power-scene-row > span.active { color: #406223; }
+.project-case .power-overview-scenes small,
+.project-case .power-scene-row small,
+.project-case .power-alert-card:not(.urgent) span,
+.project-case .power-alert-card:not(.urgent) small { color: #5d6057; }
+.project-case .power-motion-alert > div:nth-child(2) span { color: #a53d20; }
+.project-case .power-motion-alert > div:nth-child(2) small { color: #5b6057; }
+
+.dark .aperture-case { --pc-accent: #ff7c87; }
+.project-case .aperture-actor-grid article > span,
+.project-case .aperture-journey .pc-section-label,
+.project-case .aperture-site-hero > span { color: #ff7c87; }
+.project-case .aperture-journey-track-event { --journey-color: #ff7c87; }
+.project-case .aperture-journey-track li { opacity: 1; }
+.project-case .aperture-browser-bar span { color: #62564b; }
+.project-case .aperture-leather-photo span {
+  padding: 8px 12px;
+  background: #30231a;
+  color: #ffe2b1;
+  border-radius: 4px;
+}
+.project-case .aperture-leather-info span { color: #62564b; }
+.dark .project-case .aperture-validation-list span { color: var(--pc-accent); }
+.dark .project-case .aperture-validation-list p { color: var(--pc-muted); }
+
+.rw-case .rw-fit-progress strong { color: #ef9b77; }
+.rw-case .rw-case-fit-section .rw-case-check-list { color: #555e52; }
+.dark .rw-case .rw-case-fit-section .rw-case-check-list { color: var(--rw-muted); }
+.rw-case .rw-lookbook-card-bottom span { color: #50594e; }
+.rw-case .rw-case-reflection .rw-case-section-label,
+.rw-case .rw-case-reflection-grid > p:last-child { color: #110b08; }
+.rw-case .case-study-disclaimer { color: var(--rw-muted); }
+
+/* Let editorial copy wrap with its available width, rather than forced lines. */
+:is(.project-case, .rw-case) :is(h2, h3) {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+:is(.project-case, .rw-case) :is(p, li, figcaption) {
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+.project-case .pc-heading-row h2,
+.project-case .pc-feature-copy h2,
+.project-case .pc-reflection h2,
+.project-case .fmp-motion-copy h2,
+.project-case .power-motion-copy h2,
+.project-case .condo-motion-copy h2,
+.rw-case .rw-case-problem-grid h2,
+.rw-case .rw-case-heading-row h2,
+.rw-case .rw-case-showcase-copy h2,
+.rw-case .rw-case-reflection h2 {
+  font-size: clamp(32px, 4.4vw, 64px);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+.hero-intro,
+.process-list p,
+.about-section p,
+.footer-inner > p { text-wrap: pretty; }
+.process-intro h2,
+.footer-inner > h2 { text-wrap: balance; }
+
+/* Consistent wrapping across the whole portfolio, including main titles. */
+body :is(h1, h2, h3, h4) {
+  text-wrap: balance;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+body :is(p, li, figcaption, blockquote) {
+  text-wrap: pretty;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+:is(.project-case .pc-hero-copy, .rw-case .rw-case-hero-copy) {
+  container-type: inline-size;
+}
+.project-case .pc-hero-copy h1,
+.rw-case .rw-case-hero-copy h1 {
+  max-width: 100%;
+  font-size: clamp(38px, 13cqw, 82px);
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+}
+:is(.pc-tag-row, .rw-case-tag-row) { flex-wrap: wrap; }
+:is(.pc-tag-row, .rw-case-tag-row) span { text-wrap: balance; }
+html[lang='ko'] body :is(h1, h2, h3, h4, p, li, figcaption, blockquote) {
+  word-break: keep-all;
+}
+/* Labels in navigation stay intact; longer project names can wrap. */
+.case-study-footer-projects strong { overflow-wrap: normal; text-wrap: balance; }
+.condo-case .condo-life-timeline li > div { min-width: 0; }
+.condo-case .condo-life-timeline small { overflow-wrap: break-word; }
+.work-entry-heading { min-width: 0; }
+@media (max-width: 720px) {
+  .condo-case .condo-life-timeline {
+    grid-template-columns: repeat(5, minmax(132px, 1fr));
+  }
+}
