@@ -14,6 +14,7 @@ import {
   PowerPauseCaseStudy,
 } from './components/ProjectCaseStudies'
 import { RewardrobeCaseStudy } from './components/RewardrobeCaseStudy'
+import { ForestKeepersCaseStudy } from './components/projects/forest-keepers/CaseStudy'
 import { Work } from './components/Work'
 import { copy, type Language } from './data/copy'
 import './rewardrobe.css'
@@ -31,6 +32,7 @@ type Page =
   | 'powerpause'
   | 'condo-connect'
   | 'rewardrobe'
+  | 'forest-keepers'
 
 function getCurrentPage(): Page {
   // Hash entry links work on static hosts without a server rewrite.
@@ -48,6 +50,8 @@ function getCurrentPage(): Page {
       return 'powerpause'
     case '/work/condo-connect':
       return 'condo-connect'
+    case '/work/forest-keepers':
+      return 'forest-keepers'
     case '/work/rewardrobe':
       return 'rewardrobe'
     default:
@@ -103,6 +107,7 @@ function App() {
       powerpause: 'PowerPause — Jenny Kim',
       'condo-connect': 'Condo Connect — Jenny Kim',
       rewardrobe: 'RE:WARDROBE — Jenny Kim',
+      'forest-keepers': 'Forest Keepers — Jenny Kim',
     }
 
     document.title = pageTitles[page]
@@ -127,13 +132,20 @@ function App() {
     })
   }
 
+  if (page === 'forest-keepers') {
+    return <ForestKeepersCaseStudy onBack={returnHome}
+      onPrevious={() => openPage('rewardrobe', '/work/rewardrobe')}
+      onNext={() => openPage('find-my-park', '/work/find-my-park')}
+      language={language} dark={dark} onToggleTheme={() => setDark(value => !value)} onLanguageChange={setLanguage}/>
+  }
+
   if (page === 'rewardrobe') {
     return (
       <CaseStudyLanguageLayer language={language}>
         <RewardrobeCaseStudy
           onBack={returnHome}
           onPrevious={() => openPage('condo-connect', '/work/condo-connect')}
-          onNext={() => openPage('find-my-park', '/work/find-my-park')}
+          onNext={() => openPage('forest-keepers', '/work/forest-keepers')}
           language={language}
           dark={dark}
           onToggleTheme={() => setDark((value) => !value)}
@@ -148,7 +160,7 @@ function App() {
       <CaseStudyLanguageLayer language={language}>
         <FindMyParkCaseStudy
           onBack={returnHome}
-          onPrevious={() => openPage('rewardrobe', '/work/rewardrobe')}
+          onPrevious={() => openPage('forest-keepers', '/work/forest-keepers')}
           onNext={() => openPage('aperture', '/work/aperture')}
           language={language}
           dark={dark}
@@ -220,6 +232,7 @@ function App() {
       <Hero t={t} />
 
       <Work
+        onOpenForestKeepers={() => openPage('forest-keepers', '/work/forest-keepers')}
         t={t}
         onOpenFindMyPark={() => openPage('find-my-park', '/work/find-my-park')}
         onOpenAperture={() => openPage('aperture', '/work/aperture')}

@@ -573,8 +573,8 @@ export function FindMyParkCaseStudy({
       <CaseStudyFooter
         language={language}
         currentProjectDescription="Find My Park · Find the right park for your moment."
-        previousProjectName="RE:WARDROBE"
-        previousProjectPath="/work/rewardrobe"
+        previousProjectName="Forest Keepers"
+        previousProjectPath="/work/forest-keepers"
         nextProjectName="Aperture Coffee Bar"
         nextProjectPath="/work/aperture"
         onPrevious={onPrevious}

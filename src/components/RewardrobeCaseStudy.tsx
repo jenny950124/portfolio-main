@@ -622,8 +622,8 @@ export function RewardrobeCaseStudy({
         currentProjectDescription="RE:WARDROBE · Worn forward."
         previousProjectName="Condo Connect"
         previousProjectPath="/work/condo-connect"
-        nextProjectName="Find My Park"
-        nextProjectPath="/work/find-my-park"
+        nextProjectName="Forest Keepers"
+        nextProjectPath="/work/forest-keepers"
         onPrevious={onPrevious}
         onNext={onNext}
       />

@@ -330,7 +330,7 @@ export function CaseStudySectionNav({
   const moveToSection = (id: string) => {
     setActiveId(id)
     document.getElementById(id)?.scrollIntoView({
-      behavior: 'smooth',
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
       block: 'start',
     })
   }

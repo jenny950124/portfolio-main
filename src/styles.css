@@ -3779,7 +3779,7 @@ footer {
 
 }
 
-/* The introduction leads into a single ordered list of all five projects. */
+/* The introduction leads into a single ordered list of all six projects. */
 .hero.hero-introduction {
   grid-template-columns: minmax(0, 1fr);
   min-height: 0;

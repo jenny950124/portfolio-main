@@ -5,6 +5,8 @@ import cafeThumbnail from '../assets/aperture-thumbnail.png'
 import condoThumbnail from '../assets/condobooking_process.png'
 import rewardrobeThumbnail from '../assets/worn-forward-runner-landscape.png'
 import { FindMyParkPreview } from './FindMyParkPreview'
+import { ForestKeepersPreview } from './projects/forest-keepers/Demo'
+import './projects/forest-keepers/styles.css'
 import './work-accordion.css'
 type WorkProps = {
   t: PortfolioCopy
@@ -12,6 +14,7 @@ type WorkProps = {
   onOpenAperture: () => void
   onOpenPowerPause: () => void
   onOpenCondo: () => void
+  onOpenForestKeepers: () => void
   onOpenRewardrobe: () => void
 }
 export function Work({
@@ -21,6 +24,7 @@ export function Work({
   onOpenPowerPause,
   onOpenCondo,
   onOpenRewardrobe,
+  onOpenForestKeepers,
 }: WorkProps) {
   const [expanded, setExpanded] = useState<string | null>('find-my-park')
   const korean = t.selected === '주요 프로젝트'
@@ -66,6 +70,16 @@ export function Work({
       tags: 'Product Strategy · UX/UI · Interaction Design',
       image: rewardrobeThumbnail, alt: 'Outdoor runner against a blue sky and dark rocks',
       open: onOpenRewardrobe,
+    },
+    {
+      id: 'forest-keepers', number: '06', title: 'Forest Keepers',
+      category: korean ? '교육용 게임' : 'Educational game',
+      description: korean
+        ? '작은 선택으로 숲을 되살리는 어린이 분리배출 게임. 즉각적인 보상, 세 번의 기회, 세 단계의 모험으로 자연을 아끼는 습관을 연습합니다.'
+        : 'An educational recycling game where little choices bring a forest to life. Immediate rewards, three hearts, and three adventures turn caring for nature into play.',
+      tags: 'Game UX · Interaction Design · React Native / Expo',
+      image: '', alt: 'Forest Keepers recycling game and illustrated woodland',
+      open: onOpenForestKeepers,
     },
   ]
   return (
@@ -138,7 +152,7 @@ export function Work({
                           <strong>Shared spaces.<br />Simply connected.</strong>
                         </div>
                       )}
-                      {project.id === 'rewardrobe' ? <div className="wf-work-editorial"><span className="wf-work-word" aria-hidden="true">RE:<br />WEAR.</span><img src={project.image} alt={project.alt} loading="lazy" /><span className="wf-work-tape" aria-hidden="true">YOUR CLOSET. A NEW PERSPECTIVE. ↗</span></div> : project.id === 'find-my-park' ? <FindMyParkPreview /> : project.id === 'powerpause' ? <PowerPausePreview /> : (
+                      {project.id === 'forest-keepers' ? <ForestKeepersPreview /> : project.id === 'rewardrobe' ? <div className="wf-work-editorial"><span className="wf-work-word" aria-hidden="true">RE:<br />WEAR.</span><img src={project.image} alt={project.alt} loading="lazy" /><span className="wf-work-tape" aria-hidden="true">YOUR CLOSET. A NEW PERSPECTIVE. ↗</span></div> : project.id === 'find-my-park' ? <FindMyParkPreview /> : project.id === 'powerpause' ? <PowerPausePreview /> : (
                         <img src={project.image} alt={project.alt} loading="lazy" decoding="async" />
                       )}
                       {(project.id === 'aperture' || project.id === 'rewardrobe') && (
